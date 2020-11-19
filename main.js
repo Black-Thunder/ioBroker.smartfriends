@@ -7,7 +7,6 @@
 // The adapter-core module gives you access to the core ioBroker functions you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 const schellenbergBridge = require("./lib/SchellenbergBridge");
-const commandFactory = require("./lib/comunication/CommandFactory");
 
 let gthis = null; // global to 'this' of Melcloud main instance
 let SchellenbergBridge = null;
@@ -27,6 +26,7 @@ class Smartfriends extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		gthis = this;
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Smartfriends extends utils.Adapter {
 		this.smartFriendsIP = "192.168.150.50";
 		this.smartFriendsPort = 4300;
 		this.smartFriendsUsername = "Admin";
-		this.smartFriendsPassword = "2105929";    
+		this.smartFriendsPassword = "2105929";
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();
 	}
