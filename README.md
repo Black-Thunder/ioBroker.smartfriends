@@ -14,7 +14,7 @@
 
 ## smartfriends adapter for ioBroker
 
-Special thanks und credits to [LaPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
+Special thanks und credits to [LoPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
 
 Describe your project here
 
