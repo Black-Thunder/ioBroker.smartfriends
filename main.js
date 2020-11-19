@@ -34,10 +34,6 @@ class Smartfriends extends utils.Adapter {
 	 */
 	async onReady() {
 		//this.subscribeStates("testVariable");
-		this.smartFriendsIP = "192.168.150.50";
-		this.smartFriendsPort = 4300;
-		this.smartFriendsUsername = "Admin";
-		this.smartFriendsPassword = "2105929";
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();
 	}

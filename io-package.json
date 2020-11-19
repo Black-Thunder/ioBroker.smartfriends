@@ -72,8 +72,10 @@
 		]
 	},
 	"native": {
-		"option1": true,
-		"option2": "42"
+		"smartFriendsPort" : 4300,
+		"smartFriendsIP": "",		
+		"smartFriendsUsername": "",
+		"smartFriendsPassword": ""
 	},
 	"objects": [],
 	"instanceObjects": []
