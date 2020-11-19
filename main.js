@@ -34,8 +34,8 @@ class Smartfriends extends utils.Adapter {
 
 		//this.decryptPassword();
 
-		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort == "") {
-			this.log.warn("Port was not set. Now set to 4900 (default port).");
+		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
+			this.log.warn("Port was not correctly set. Now set to 4900 (default port).");
 			this.config.smartFriendsPort = 4900;
 		}
 
@@ -46,7 +46,7 @@ class Smartfriends extends utils.Adapter {
 		if (this.config.smartFriendsUsername == null || this.config.smartFriendsUsername == "") {
 			throw new Error("Username empty! Check settings.");
 		}
-		
+
 		if (this.config.smartFriendsPassword == null || this.config.smartFriendsPassword == "") {
 			throw new Error("Password empty! Check settings.");
 		}
@@ -64,7 +64,7 @@ class Smartfriends extends utils.Adapter {
 	 */
 	async onReady() {
 		this.checkSettings()
-			.then(() => 
+			.then(() =>
 			{
 				this.connectToGateway();
 
