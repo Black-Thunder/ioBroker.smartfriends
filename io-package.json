@@ -46,9 +46,10 @@
 		],
 		"keywords": [
 			"ioBroker",
-			"template",
 			"Smart Home",
-			"home automation"
+			"home automation",
+			"smartfriends",
+			"schellenberg"
 		],
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
