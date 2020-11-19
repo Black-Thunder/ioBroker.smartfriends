@@ -29,13 +29,47 @@ class Smartfriends extends utils.Adapter {
 		gthis = this;
 	}
 
+	async checkSettings() {
+		this.log.debug("Checking adapter settings...");
+
+		//this.decryptPassword();
+
+		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort == "") {
+			this.log.warn("Port was not set. Now set to 4900 (default port).");
+			this.config.smartFriendsPort = 4900;
+		}
+
+		if (this.config.smartFriendsIP == null || this.config.smartFriendsIP == "") {
+			throw new Error("IP address empty! Check settings.");
+		}
+
+		if (this.config.smartFriendsUsername == null || this.config.smartFriendsUsername == "") {
+			throw new Error("Username empty! Check settings.");
+		}
+		
+		if (this.config.smartFriendsPassword == null || this.config.smartFriendsPassword == "") {
+			throw new Error("Password empty! Check settings.");
+		}
+	}
+
+	async connectToGateway() {
+		gthis.log.info("Connecting to SmartFriendsBox and retrieving data...");
+
+		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
+		SchellenbergBridge.Connect();
+	}
+
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		//this.subscribeStates("testVariable");
-		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
-		SchellenbergBridge.Connect();
+		this.checkSettings()
+			.then(() => 
+			{
+				this.connectToGateway();
+
+				//this.subscribeStates("testVariable");
+			});
 	}
 
 	/**
