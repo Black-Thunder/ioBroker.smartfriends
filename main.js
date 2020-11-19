@@ -69,7 +69,8 @@ class Smartfriends extends utils.Adapter {
 				this.connectToGateway();
 
 				//this.subscribeStates("testVariable");
-			});
+			})
+			.catch(err => this.log.error(err));
 	}
 
 	/**
