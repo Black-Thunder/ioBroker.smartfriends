@@ -1,41 +1,12 @@
 /*global systemDictionary:true */
-"use strict";
+'use strict';
 
 systemDictionary = {
-	"smartfriends adapter settings": {
-		"en": "Adapter settings for smartfriends",
-		"de": "Adaptereinstellungen für smartfriends",
-		"ru": "Настройки адаптера для smartfriends",
-		"pt": "Configurações do adaptador para smartfriends",
-		"nl": "Adapterinstellingen voor smartfriends",
-		"fr": "Paramètres d'adaptateur pour smartfriends",
-		"it": "Impostazioni dell'adattatore per smartfriends",
-		"es": "Ajustes del adaptador para smartfriends",
-		"pl": "Ustawienia adaptera dla smartfriends",
-		"zh-cn": "smartfriends的适配器设置"
-	},
-	"option1": {
-		"en": "option1",
-		"de": "Option 1",
-		"ru": "Опция 1",
-		"pt": "Opção 1",
-		"nl": "Optie 1",
-		"fr": "Option 1",
-		"it": "opzione 1",
-		"es": "Opción 1",
-		"pl": "opcja 1",
-		"zh-cn": "选项1"
-	},
-	"option2": {
-		"en": "option2",
-		"de": "Option 2",
-		"ru": "option2",
-		"pt": "opção 2",
-		"nl": "Optie 2",
-		"fr": "Option 2",
-		"it": "opzione 2",
-		"es": "opcion 2",
-		"pl": "Opcja 2",
-		"zh-cn": "选项2"
-	}
+    "Enter your SmartFriendsBox IP address": {       "en": "Enter your SmartFriendsBox IP address",           "de": "Geben Sie Ihre SmartFriendsBox-IP-Adresse ein",   "ru": "Введите свой IP-адрес SmartFriendsBox",           "pt": "Digite seu endereço IP SmartFriendsBox",          "nl": "Voer uw SmartFriendsBox IP-adres in",             "fr": "Entrez votre adresse IP SmartFriendsBox",         "it": "Inserisci il tuo indirizzo IP SmartFriendsBox",   "es": "Ingrese su dirección IP de SmartFriendsBox",      "pl": "Wprowadź swój adres IP SmartFriendsBox",          "zh-cn": "输入您的SmartFriendsBox IP地址"},
+    "Enter your SmartFriendsBox password": {         "en": "Enter your SmartFriendsBox password",             "de": "Geben Sie Ihr SmartFriendsBox-Passwort ein",      "ru": "Введите свой пароль SmartFriendsBox",             "pt": "Digite sua senha SmartFriendsBox",                "nl": "Voer uw SmartFriendsBox-wachtwoord in",           "fr": "Entrez votre mot de passe SmartFriendsBox",       "it": "Inserisci la tua password SmartFriendsBox",       "es": "Ingrese su contraseña de SmartFriendsBox",        "pl": "Wprowadź hasło do SmartFriendsBox",               "zh-cn": "输入您的SmartFriendsBox密码"},
+    "Enter your SmartFriendsBox username": {         "en": "Enter your SmartFriendsBox username",             "de": "Geben Sie Ihren SmartFriendsBox-Benutzernamen ein", "ru": "Введите свое имя пользователя SmartFriendsBox",   "pt": "Digite seu nome de usuário SmartFriendsBox",      "nl": "Voer uw SmartFriendsBox-gebruikersnaam in",       "fr": "Entrez votre nom d'utilisateur SmartFriendsBox",  "it": "Inserisci il tuo nome utente SmartFriendsBox",    "es": "Ingrese su nombre de usuario de SmartFriendsBox", "pl": "Wprowadź swoją nazwę użytkownika SmartFriendsBox", "zh-cn": "输入您的SmartFriendsBox用户名"},
+    "IP address": {                                  "en": "IP address",                                      "de": "IP Adresse",                                      "ru": "айпи адрес",                                      "pt": "endereço de IP",                                  "nl": "IP adres",                                        "fr": "adresse IP",                                      "it": "indirizzo IP",                                    "es": "dirección IP",                                    "pl": "adres IP",                                        "zh-cn": "IP地址"},
+    "Password": {                                    "en": "Password",                                        "de": "Passwort",                                        "ru": "пароль",                                          "pt": "Senha",                                           "nl": "Wachtwoord",                                      "fr": "Mot de passe",                                    "it": "Parola d'ordine",                                 "es": "Contraseña",                                      "pl": "Hasło",                                           "zh-cn": "密码"},
+    "Username": {                                    "en": "Username",                                        "de": "Nutzername",                                      "ru": "Имя пользователя",                                "pt": "Nome do usuário",                                 "nl": "Gebruikersnaam",                                  "fr": "Nom d'utilisateur",                               "it": "Nome utente",                                     "es": "Nombre de usuario",                               "pl": "Nazwa Użytkownika",                               "zh-cn": "用户名"},
+    "smartfriends adapter settings": {               "en": "Adapter settings for smartfriends",               "de": "Adaptereinstellungen für smartfriends",           "ru": "Настройки адаптера для smartfriends",             "pt": "Configurações do adaptador para smartfriends",    "nl": "Adapterinstellingen voor smartfriends",           "fr": "Paramètres d'adaptateur pour smartfriends",       "it": "Impostazioni dell'adattatore per smartfriends",   "es": "Ajustes del adaptador para smartfriends",         "pl": "Ustawienia adaptera dla smartfriends",            "zh-cn": "smartfriends的适配器设置"}
 };
