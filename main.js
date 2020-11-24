@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 const schellenbergBridge = require("./lib/SchellenbergBridge");
+const commonDefines = require("./lib/helpers/CommonDefines");
 
 let gthis = null; // global to 'this' of Melcloud main instance
 let SchellenbergBridge = null;
@@ -52,18 +53,92 @@ class Smartfriends extends utils.Adapter {
 		}
 	}
 
+	async initObjects() {
+		this.log.debug("Initializing objects...");
+
+		// info
+		let infoPrefix = commonDefines.AdapterDatapointIDs.Info;
+		await this.setObjectNotExistsAsync(infoPrefix, {
+			type: "channel",
+			common: {
+				name: "Adapter information"
+			},
+			native: {}
+		});
+
+		infoPrefix += ".";
+
+		await this.setObjectNotExistsAsync(infoPrefix + commonDefines.AdapterStateIDs.Connection, {
+			type: "state",
+			common: {
+				name: "Connection to gateway",
+				type: "boolean",
+				role: "indicator.connected",
+				read: true,
+				write: false,
+				desc: "Indicates if connection to SmartFriendsBox was successful or not"
+			},
+			native: {}
+		});
+
+		// gateway
+		let gatewayPrefix = commonDefines.AdapterDatapointIDs.Gateway;
+		await this.setObjectNotExistsAsync(gatewayPrefix, {
+			type: "channel",
+			common: {
+				name: "Gateway information"
+			},
+			native: {}
+		});
+
+		gatewayPrefix += ".";
+
+		await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.HardwareName, {
+			type: "state",
+			common: {
+				name: "Hardware name",
+				type: "string",
+				role: "text",
+				read: true,
+				write: false,
+				desc: "Actual Hardware name"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.MacAddress, {
+			type: "state",
+			common: {
+				name: "Hardware MAC address",
+				type: "string",
+				role: "info.mac",
+				read: true,
+				write: false,
+				desc: "Hardware MAC address"
+			},
+			native: {}
+		});
+
+		this.setAdapterConnectionState(false);
+	}
+
 	async connectToGateway() {
-		gthis.log.info("Connecting to SmartFriendsBox and retrieving data...");
+		gthis.log.info("Connecting to gateway and retrieving data...");
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();
+	}
+
+	async setAdapterConnectionState(isConnected) {
+		await this.setStateChangedAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.checkSettings()
+		this.initObjects()
+			.then(() => this.checkSettings())
 			.then(() =>
 			{
 				this.connectToGateway();
@@ -141,12 +216,6 @@ class Smartfriends extends utils.Adapter {
 	// 		}
 	// 	}
 	// }
-
-	async setAdapterConnectionState(isConnected) {
-		await this.setStateChangedAsync("info.connection", isConnected, true);
-	}
-
-
 }
 
 // @ts-ignore parent is a valid property on module
