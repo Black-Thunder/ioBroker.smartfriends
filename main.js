@@ -8,6 +8,7 @@
 const utils = require("@iobroker/adapter-core");
 const schellenbergBridge = require("./lib/SchellenbergBridge");
 const commonDefines = require("./lib/helpers/CommonDefines");
+const commandFactory = require("./lib/comunication/CommandFactory");
 
 let gthis = null; // global to 'this' of Melcloud main instance
 let SchellenbergBridge = null;
@@ -24,8 +25,6 @@ class Smartfriends extends utils.Adapter {
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
-		// this.on("objectChange", this.onObjectChange.bind(this));
-		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 		gthis = this;
 	}
@@ -178,23 +177,6 @@ class Smartfriends extends utils.Adapter {
 		}
 	}
 
-	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-	// /**
-	//  * Is called if a subscribed object changes
-	//  * @param {string} id
-	//  * @param {ioBroker.Object | null | undefined} obj
-	//  */
-	// onObjectChange(id, obj) {
-	// 	if (obj) {
-	// 		// The object was changed
-	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-	// 	} else {
-	// 		// The object was deleted
-	// 		this.log.info(`object ${id} deleted`);
-	// 	}
-	// }
-
 	/**
 	 * Is called if a subscribed state changes
 	 * @param {string} id
@@ -205,34 +187,48 @@ class Smartfriends extends utils.Adapter {
 			// The state was changed
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
+			if(state.val == false) {
+				this.log.silly("Only suscribed to val==true. No need to process changed data.");
+				return;
+			}
+
 			// ack is true when state was updated by gateway --> in this case, we don't need to send it again
 			if (state.ack) {
 				this.log.silly("Updated data was retrieved from gateway. No need to process changed data.");
 				return;
+			}
+
+			// Only states under "devices.XXX.control" are subscribed --> device settings/modes are changed
+			let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
+			deviceId = deviceId.substring(0, deviceId.indexOf("."));
+
+			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
+			let controlCommand = commonDefines.DeviceCommands.UNDEF;
+			switch (controlOption) {
+				case (commonDefines.AdapterStateIDs.MoveDown):
+					controlCommand = commonDefines.DeviceCommands.MoveDown;
+					break;
+				case (commonDefines.AdapterStateIDs.MoveUp):
+					controlCommand = commonDefines.DeviceCommands.MoveUp;
+					break;
+				case (commonDefines.AdapterStateIDs.MoveStop):
+					controlCommand = commonDefines.DeviceCommands.MoveStop;
+					break;
+				default:
+					this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
+					break;
+			}
+
+			if(deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
+				this.log.info("Sending command '" + controlCommand.name + "' to device " + deviceId + "...");
+				SchellenbergBridge.sendAndReceiveCommand(commandFactory.default.createSetDeviceValueCmd(deviceId, controlCommand.value));
+				this.setStateAsync(id, false, true);
 			}
 		} else {
 			// The state was deleted
 			this.log.silly(`state ${id} deleted`);
 		}
 	}
-
-	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.message" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	// onMessage(obj) {
-	// 	if (typeof obj === "object" && obj.message) {
-	// 		if (obj.command === "send") {
-	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
-
-	// 			// Send response in callback if required
-	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-	// 		}
-	// 	}
-	// }
 }
 
 // @ts-ignore parent is a valid property on module
