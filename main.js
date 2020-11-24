@@ -30,10 +30,21 @@ class Smartfriends extends utils.Adapter {
 		gthis = this;
 	}
 
+	async decryptPassword() {
+		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
+		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
+			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
+				this.config.smartFriendsPassword = commonDefines.decrypt(sysConfigObject.native.secret, this.config.smartFriendsPassword);
+			} else {
+				this.config.smartFriendsPassword = commonDefines.decrypt("Zgfr56gFe87jJOM", this.config.smartFriendsPassword);
+			}
+		}
+	}
+
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
 
-		//this.decryptPassword();
+		this.decryptPassword();
 
 		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
 			this.log.warn("Port was not correctly set. Now set to 4900 (default port).");
@@ -124,6 +135,7 @@ class Smartfriends extends utils.Adapter {
 
 	async connectToGateway() {
 		gthis.log.info("Connecting to gateway and retrieving data...");
+		gthis.log.debug("SmartFriendsBox username: " + this.config.smartFriendsUsername + " - SmartFriendsBox password: " + this.config.smartFriendsPassword);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();
@@ -142,8 +154,7 @@ class Smartfriends extends utils.Adapter {
 			.then(() =>
 			{
 				this.connectToGateway();
-
-				//this.subscribeStates("testVariable");
+				this.subscribeStates("devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
 			})
 			.catch(err => this.log.error(err));
 	}
@@ -192,10 +203,16 @@ class Smartfriends extends utils.Adapter {
 	onStateChange(id, state) {
 		if (state) {
 			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+
+			// ack is true when state was updated by gateway --> in this case, we don't need to send it again
+			if (state.ack) {
+				this.log.silly("Updated data was retrieved from gateway. No need to process changed data.");
+				return;
+			}
 		} else {
 			// The state was deleted
-			this.log.info(`state ${id} deleted`);
+			this.log.silly(`state ${id} deleted`);
 		}
 	}
 

@@ -18,13 +18,47 @@
 	<script type="text/javascript" src="words.js"></script>
 
 	<script type="text/javascript">
+		var secret;
+
+		function encrypt(key, value) {
+			var result = '';
+			for (var i = 0; i < value.length; ++i) {
+				result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
+			}
+			return result;
+		}
+
+		function decrypt(key, value) {
+			var result = '';
+			for (var i = 0; i < value.length; ++i) {
+				result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
+			}
+			return result;
+		}
+
 		// This will be called by the admin adapter when the settings page loads
 		function load(settings, onChange) {
+			socket.emit('getObject', 'system.config', function (err, obj) {
+				secret = (obj.native ? obj.native.secret : '') || 'Zgfr56gFe87jJOM';
+				loadHelper(settings, onChange);
+			});
+
+			onChange(false);
+		}
+
+		// This will be called by the admin adapter when the settings page loads
+		function loadHelper(settings, onChange) {
 			// example: select elements with id=key and class=value and insert value
 			if (!settings) return;
 			$('.value').each(function () {
 				var $key = $(this);
 				var id = $key.attr('id');
+
+				if (id === 'smartFriendsPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
+					'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+					settings[id] = decrypt(secret, settings[id]);
+				}
+
 				if ($key.attr('type') === 'checkbox') {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.prop('checked', settings[id])
@@ -52,7 +86,14 @@
 				if ($this.attr('type') === 'checkbox') {
 					obj[$this.attr('id')] = $this.prop('checked');
 				} else {
-					obj[$this.attr('id')] = $this.val();
+					var value = $this.val();
+
+					if (id === 'smartFriendsPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
+						'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+						value = encrypt(secret, value);
+					}
+
+					obj[$this.attr('id')] = value;
 				}
 			});
 			callback(obj);
