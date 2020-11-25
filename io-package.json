@@ -55,7 +55,7 @@
         "platform": "Javascript/Node.js",
         "main": "main.js",
         "icon": "smartfriends.png",
-        "enabled": true,
+        "enabled": false,
         "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
         "readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
         "loglevel": "info",
