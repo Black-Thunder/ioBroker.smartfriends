@@ -13,8 +13,16 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 
 ![Einstellungen des Adapters](img/adapter_settings.png)
 
+### Allgemeine Einstellungen
+
 An dieser Stelle kann die jeweilige Adapter-Instanz konfiguriert werden. Zwingend nötig für die Funktionalität sind die Zugangsdaten (Benutzername und Passwort) und die IP-Adresse des SmartFriend-Gateways.
 ...
+
+### Erweiterte Einstellungen
+
+Diese Einstellungen müssen in der Regel nicht geändert werden, solange man eine SmartFriendsBox einsetzt. Bei Verwendung eines anderen kompatiblen Gateways müssen die Parameter entsprechend angepasst werden. Dazu die SmartFriends-App öffnen und folgende Schritte ausführen:
+
+![Ermitteln der Gateway-Parameter](img/find_gateway_parameters.png)
 
 ## Objekte
 

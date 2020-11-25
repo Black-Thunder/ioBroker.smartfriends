@@ -13,7 +13,12 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 ![Adapter settings](img/adapter_settings.png)
 
+### General settings
+
 Here you can configure your adapter instance. Mandatory for the adapter to work are your SmartFriends credentials (username and password) and the IP address of your gateway.
+...
+
+### Advanced settings
 ...
 
 ## Objects
