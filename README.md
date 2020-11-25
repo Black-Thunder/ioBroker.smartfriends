@@ -14,9 +14,13 @@
 
 ## smartfriends adapter for ioBroker
 
-Special thanks und credits to [LoPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
+This adapter integrates the SmartFriends-ecosystem directly using the gateway (SmartFriendsBox) into ioBroker.
 
-Describe your project here
+Documentation:
+
+* [Forum thread](TODO)
+* [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/melcloud.md)
+* [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/melcloud.md)
 
 ## Changelog
 <!--
@@ -26,6 +30,9 @@ Describe your project here
 
 ### __WORK IN PROGRESS__
 * (Black-Thunder) initial release
+
+## Acknowledgements
+Special thanks und credits to [LoPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
 
 ## License
 MIT License
