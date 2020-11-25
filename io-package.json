@@ -75,7 +75,10 @@
         "smartFriendsPort": 4300,
         "smartFriendsIP": "",
         "smartFriendsUsername": "",
-        "smartFriendsPassword": ""
+        "smartFriendsPassword": "",
+        "smartFriendsCSymbol": "D19033i",
+        "smartFriendsShcVersion": "2.15.0",
+        "smartFriendsShApiVersion": "2.15"
     },
     "objects": [],
     "instanceObjects": []

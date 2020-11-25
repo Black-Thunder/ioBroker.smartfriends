@@ -46,7 +46,7 @@ class Smartfriends extends utils.Adapter {
 		this.decryptPassword();
 
 		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
-			this.log.warn("Port was not correctly set. Now set to 4900 (default port).");
+			this.log.warn("Port was not correctly set. Defaulting to 4900.");
 			this.config.smartFriendsPort = 4900;
 		}
 
@@ -60,6 +60,21 @@ class Smartfriends extends utils.Adapter {
 
 		if (this.config.smartFriendsPassword == null || this.config.smartFriendsPassword == "") {
 			throw new Error("Password empty! Check settings.");
+		}
+
+		if (this.config.smartFriendsCSymbol == null || this.config.smartFriendsCSymbol == "") {
+			this.log.warn("CSymbol was not correctly set. Defaulting to 4900.");
+			this.config.smartFriendsCSymbol = "D19033i";
+		}
+
+		if (this.config.smartFriendsShcVersion == null || this.config.smartFriendsShcVersion == "") {
+			this.log.warn("SHCVersion was not correctly set. Defaulting to 4900.");
+			this.config.smartFriendsShcVersion = "2.15.0";
+		}
+
+		if (this.config.smartFriendsShApiVersion == null || this.config.smartFriendsShApiVersion == "") {
+			this.log.warn("SHAPIVersion was not correctly set. Defaulting to 4900.");
+			this.config.smartFriendsShApiVersion = "2.15";
 		}
 	}
 
@@ -134,7 +149,9 @@ class Smartfriends extends utils.Adapter {
 
 	async connectToGateway() {
 		gthis.log.info("Connecting to gateway and retrieving data...");
-		gthis.log.debug("SmartFriendsBox username: " + this.config.smartFriendsUsername + " - SmartFriendsBox password: " + this.config.smartFriendsPassword);
+		gthis.log.debug("IP: " + this.config.smartFriendsIP + " - Port: " + this.config.smartFriendsPort + " - Username: " + this.config.smartFriendsUsername + " - Password: " +
+						this.config.smartFriendsPassword + " - CSymbol: " +	this.config.smartFriendsCSymbol + " - SHCVersion: " + this.config.smartFriendsShcVersion +
+						" - SHAPIVersion: " + this.config.smartFriendsShApiVersion);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();

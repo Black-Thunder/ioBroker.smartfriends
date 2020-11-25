@@ -1,9 +1,15 @@
 {
+    "Enter the CSymbol specific for your gateway": "Enter the CSymbol specific for your gateway",
+    "Enter the SHAPIVersion specific for your gateway": "Enter the SHAPIVersion specific for your gateway",
+    "Enter the SHCVersion specific for your gateway": "Enter the SHCVersion specific for your gateway",
     "Enter your SmartFriendsBox IP address": "Enter your SmartFriendsBox IP address",
     "Enter your SmartFriendsBox password": "Enter your SmartFriendsBox password",
     "Enter your SmartFriendsBox username": "Enter your SmartFriendsBox username",
     "IP address": "IP address",
     "Password": "Password",
     "Username": "Username",
+    "advanced_settings": "Advanced settings",
+    "advanced_settings_info": "Typically these settings don't need to be modified unless you are using a non-supported gateway. Please refer to the adapter documentation for more information.",
+    "general_settings": "General settings",
     "smartfriends adapter settings": "Adapter settings for smartfriends"
 }

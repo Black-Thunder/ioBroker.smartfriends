@@ -1,9 +1,15 @@
 {
+    "Enter the CSymbol specific for your gateway": "Ingrese el símbolo CS específico para su puerta de enlace",
+    "Enter the SHAPIVersion specific for your gateway": "Ingrese la SHAPIVersion específica para su puerta de enlace",
+    "Enter the SHCVersion specific for your gateway": "Ingrese la SHCVersion específica para su puerta de enlace",
     "Enter your SmartFriendsBox IP address": "Ingrese su dirección IP de SmartFriendsBox",
     "Enter your SmartFriendsBox password": "Ingrese su contraseña de SmartFriendsBox",
     "Enter your SmartFriendsBox username": "Ingrese su nombre de usuario de SmartFriendsBox",
     "IP address": "dirección IP",
     "Password": "Contraseña",
     "Username": "Nombre de usuario",
+    "advanced_settings": "Ajustes avanzados",
+    "advanced_settings_info": "Por lo general, no es necesario modificar esta configuración a menos que esté utilizando una puerta de enlace no compatible. ",
+    "general_settings": "Configuración general",
     "smartfriends adapter settings": "Ajustes del adaptador para smartfriends"
 }

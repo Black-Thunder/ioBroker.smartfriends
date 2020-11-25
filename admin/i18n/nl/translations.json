@@ -1,9 +1,15 @@
 {
+    "Enter the CSymbol specific for your gateway": "Voer het CSymbol in dat specifiek is voor uw gateway",
+    "Enter the SHAPIVersion specific for your gateway": "Voer de SHAPIV-versie in die specifiek is voor uw gateway",
+    "Enter the SHCVersion specific for your gateway": "Voer de SHCVersion in die specifiek is voor uw gateway",
     "Enter your SmartFriendsBox IP address": "Voer uw SmartFriendsBox IP-adres in",
     "Enter your SmartFriendsBox password": "Voer uw SmartFriendsBox-wachtwoord in",
     "Enter your SmartFriendsBox username": "Voer uw SmartFriendsBox-gebruikersnaam in",
     "IP address": "IP adres",
     "Password": "Wachtwoord",
     "Username": "Gebruikersnaam",
+    "advanced_settings": "Geavanceerde instellingen",
+    "advanced_settings_info": "Deze instellingen hoeven doorgaans niet te worden gewijzigd, tenzij u een niet-ondersteunde gateway gebruikt. ",
+    "general_settings": "Algemene instellingen",
     "smartfriends adapter settings": "Adapterinstellingen voor smartfriends"
 }
