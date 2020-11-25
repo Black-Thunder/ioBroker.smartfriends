@@ -18,9 +18,9 @@ This adapter integrates the SmartFriends-ecosystem directly using the gateway (S
 
 Documentation:
 
-* [Forum thread](TODO)
-* [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/melcloud.md)
-* [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/melcloud.md)
+* [Forum thread] TODO
+* [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/smartfriends.md)
+* [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/smartfriends.md)
 
 ## Changelog
 <!--
