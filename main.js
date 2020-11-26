@@ -13,6 +13,12 @@ const commandFactory = require("./lib/comunication/CommandFactory");
 let gthis = null; // global to 'this' of Melcloud main instance
 let SchellenbergBridge = null;
 
+// Default gateway parameters
+const defaultPort = 4900;
+const defaultShcVersion = "2.21.1";
+const defaultShcApiVersion = "2.15";
+const defaultCSymbol = "D19033i";
+
 class Smartfriends extends utils.Adapter {
 
 	/**
@@ -46,8 +52,8 @@ class Smartfriends extends utils.Adapter {
 		this.decryptPassword();
 
 		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
-			this.log.warn("Port was not correctly set. Defaulting to 4900.");
-			this.config.smartFriendsPort = 4900;
+			this.log.warn("Port was not correctly set. Defaulting to '"+ defaultPort +  "'.");
+			this.config.smartFriendsPort = defaultPort;
 		}
 
 		if (this.config.smartFriendsIP == null || this.config.smartFriendsIP == "") {
@@ -63,18 +69,18 @@ class Smartfriends extends utils.Adapter {
 		}
 
 		if (this.config.smartFriendsCSymbol == null || this.config.smartFriendsCSymbol == "") {
-			this.log.warn("CSymbol was not correctly set. Defaulting to 4900.");
-			this.config.smartFriendsCSymbol = "D19033i";
+			this.log.warn("CSymbol was not correctly set. Defaulting to '" + defaultCSymbol + ".");
+			this.config.smartFriendsCSymbol = defaultCSymbol;
 		}
 
 		if (this.config.smartFriendsShcVersion == null || this.config.smartFriendsShcVersion == "") {
-			this.log.warn("SHCVersion was not correctly set. Defaulting to 4900.");
-			this.config.smartFriendsShcVersion = "2.15.0";
+			this.log.warn("SHCVersion was not correctly set. Defaulting to '"+ defaultShcVersion + "'.");
+			this.config.smartFriendsShcVersion = defaultShcVersion;
 		}
 
 		if (this.config.smartFriendsShApiVersion == null || this.config.smartFriendsShApiVersion == "") {
-			this.log.warn("SHAPIVersion was not correctly set. Defaulting to 4900.");
-			this.config.smartFriendsShApiVersion = "2.15";
+			this.log.warn("SHAPIVersion was not correctly set. Defaulting to '" + defaultShcApiVersion + "'.");
+			this.config.smartFriendsShApiVersion = defaultShcApiVersion;
 		}
 	}
 
