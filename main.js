@@ -16,7 +16,7 @@ let SchellenbergBridge = null;
 // Default gateway parameters
 const defaultPort = 4900;
 const defaultShcVersion = "2.21.1";
-const defaultShcApiVersion = "2.15";
+const defaultShcApiVersion = "2.20";
 const defaultCSymbol = "D19033i";
 
 class Smartfriends extends utils.Adapter {
