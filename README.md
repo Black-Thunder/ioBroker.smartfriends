@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.smartfriends.png?downloads=true)](https://nodei.co/npm/iobroker.smartfriends/)
 
-**Tests:** [![Build Status](https://travis-ci.com/Black-Thunder/ioBroker.smartfriends.svg?branch=master)](https://travis-ci.com/Black-Thunder/ioBroker.smartfriends)
+**Tests:** [![Test](https://github.com/Black-Thunder/ioBroker.smartfriends/actions/workflows/test.yml/badge.svg)](https://github.com/Black-Thunder/ioBroker.smartfriends/actions/workflows/test.yml)
 
 ## smartfriends adapter for ioBroker
 
