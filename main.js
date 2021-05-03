@@ -196,6 +196,7 @@ class Smartfriends extends utils.Adapter {
 			this.log.info("onUnload(): Cleaned everything up...");
 
 			callback();
+		// eslint-disable-next-line no-unused-vars
 		} catch (e) {
 			callback();
 		}
