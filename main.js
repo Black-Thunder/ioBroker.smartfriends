@@ -245,7 +245,7 @@ class Smartfriends extends utils.Adapter {
 			}
 
 			if(deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
-				this.log.info("Sending command '" + controlCommand.name + "' to device " + deviceId + "...");
+				this.log.debug("Sending command '" + controlCommand.name + "' to device " + deviceId + "...");
 				SchellenbergBridge.sendAndReceiveCommand(commandFactory.default.createSetDeviceValueCmd(deviceId, controlCommand.value));
 				this.setStateAsync(id, false, true);
 			}
