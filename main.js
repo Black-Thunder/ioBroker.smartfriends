@@ -52,7 +52,7 @@ class Smartfriends extends utils.Adapter {
 		this.decryptPassword();
 
 		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
-			this.log.warn("Port was not correctly set. Defaulting to '"+ defaultPort +  "'.");
+			this.log.warn(`Port was not correctly set. Defaulting to '${defaultPort}'.`);
 			this.config.smartFriendsPort = defaultPort;
 		}
 
@@ -69,17 +69,17 @@ class Smartfriends extends utils.Adapter {
 		}
 
 		if (this.config.smartFriendsCSymbol == null || this.config.smartFriendsCSymbol == "") {
-			this.log.warn("CSymbol was not correctly set. Defaulting to '" + defaultCSymbol + ".");
+			this.log.warn(`CSymbol was not correctly set. Defaulting to '${defaultCSymbol}.`);
 			this.config.smartFriendsCSymbol = defaultCSymbol;
 		}
 
 		if (this.config.smartFriendsShcVersion == null || this.config.smartFriendsShcVersion == "") {
-			this.log.warn("SHCVersion was not correctly set. Defaulting to '"+ defaultShcVersion + "'.");
+			this.log.warn(`SHCVersion was not correctly set. Defaulting to '${defaultShcVersion}'.`);
 			this.config.smartFriendsShcVersion = defaultShcVersion;
 		}
 
 		if (this.config.smartFriendsShApiVersion == null || this.config.smartFriendsShApiVersion == "") {
-			this.log.warn("SHAPIVersion was not correctly set. Defaulting to '" + defaultShcApiVersion + "'.");
+			this.log.warn(`SHAPIVersion was not correctly set. Defaulting to '${defaultShcApiVersion}'.`);
 			this.config.smartFriendsShApiVersion = defaultShcApiVersion;
 		}
 	}
@@ -155,17 +155,15 @@ class Smartfriends extends utils.Adapter {
 
 	async connectToGateway() {
 		gthis.log.info("Connecting to gateway and retrieving data...");
-		gthis.log.debug("IP: " + this.config.smartFriendsIP + " - Port: " + this.config.smartFriendsPort + " - Username: " + this.config.smartFriendsUsername + " - Password: " +
-						this.config.smartFriendsPassword + " - CSymbol: " +	this.config.smartFriendsCSymbol + " - SHCVersion: " + this.config.smartFriendsShcVersion +
-						" - SHAPIVersion: " + this.config.smartFriendsShApiVersion);
+		gthis.log.debug(`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - Username: ${this.config.smartFriendsUsername} - Password: ${this.config.smartFriendsPassword} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
 		SchellenbergBridge.Connect();
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateChangedAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
-		await this.setForeignState("system.adapter." + this.namespace + ".connected", isConnected, true);
+		await this.setStateChangedAsync(`${commonDefines.AdapterDatapointIDs.Info}.${commonDefines.AdapterStateIDs.Connection}`, isConnected, true);
+		await this.setForeignState(`system.adapter.${this.namespace}.connected`, isConnected, true);
 	}
 
 	/**
@@ -174,8 +172,7 @@ class Smartfriends extends utils.Adapter {
 	async onReady() {
 		this.initObjects()
 			.then(() => this.checkSettings())
-			.then(() =>
-			{
+			.then(() => {
 				this.connectToGateway();
 				this.subscribeStates("devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
 			})
@@ -188,7 +185,7 @@ class Smartfriends extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			if(SchellenbergBridge != null) {
+			if (SchellenbergBridge != null) {
 				SchellenbergBridge.handleDisconnect();
 			}
 
@@ -196,7 +193,7 @@ class Smartfriends extends utils.Adapter {
 			this.log.info("onUnload(): Cleaned everything up...");
 
 			callback();
-		// eslint-disable-next-line no-unused-vars
+			// eslint-disable-next-line no-unused-vars
 		} catch (e) {
 			callback();
 		}
@@ -212,7 +209,7 @@ class Smartfriends extends utils.Adapter {
 			// The state was changed
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
-			if(state.val == false) {
+			if (state.val == false) {
 				this.log.silly("Only suscribed to val==true. No need to process changed data.");
 				return;
 			}
@@ -224,7 +221,7 @@ class Smartfriends extends utils.Adapter {
 			}
 
 			// Only states under "devices.XXX.control" are subscribed --> device settings/modes are changed
-			let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
+			let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
 			deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
 			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
@@ -240,12 +237,12 @@ class Smartfriends extends utils.Adapter {
 					controlCommand = commonDefines.DeviceCommands.MoveStop;
 					break;
 				default:
-					this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
+					this.log.error(`Unsupported control option: ${controlOption} - Please report this to the developer!`);
 					break;
 			}
 
-			if(deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
-				this.log.debug("Sending command '" + controlCommand.name + "' to device " + deviceId + "...");
+			if (deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
+				this.log.debug(`Sending command '${controlCommand.name}' to device ${deviceId}...`);
 				SchellenbergBridge.sendAndReceiveCommand(commandFactory.default.createSetDeviceValueCmd(deviceId, controlCommand.value));
 				this.setStateAsync(id, false, true);
 			}
