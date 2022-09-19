@@ -5,7 +5,6 @@
 [![Downloads](https://img.shields.io/npm/dm/iobroker.smartfriends.svg)](https://www.npmjs.com/package/iobroker.smartfriends)
 ![Number of Installations (latest)](http://iobroker.live/badges/smartfriends-installed.svg)
 ![Number of Installations (stable)](http://iobroker.live/badges/smartfriends-stable.svg)
-[![Dependency Status](https://img.shields.io/david/Black-Thunder/iobroker.smartfriends.svg)](https://david-dm.org/Black-Thunder/iobroker.smartfriends)
 [![Known Vulnerabilities](https://snyk.io/test/github/Black-Thunder/ioBroker.smartfriends/badge.svg)](https://snyk.io/test/github/Black-Thunder/ioBroker.smartfriends)
 
 [![NPM](https://nodei.co/npm/iobroker.smartfriends.png?downloads=true)](https://nodei.co/npm/iobroker.smartfriends/)
