@@ -17,18 +17,17 @@
 				"SwitchCase": 1
 			}
 		],
+		"no-console": "off",
 		"no-unused-vars": [
 			"error",
 			{
-				"argsIgnorePattern": "^_",
-				"caughtErrors": "all"
+				"ignoreRestSiblings": true,
+				"argsIgnorePattern": "^_"
 			}
 		],
-		"no-console": "off",
 		"no-var": "error",
 		"no-trailing-spaces": "error",
 		"prefer-const": "error",
-		"prefer-template": "warn",
 		"quotes": [
 			"error",
 			"double",
@@ -43,6 +42,6 @@
 		]
 	},
 	"parserOptions": {
-		"ecmaVersion": 2019
+		"ecmaVersion": 2020
 	}
 }
