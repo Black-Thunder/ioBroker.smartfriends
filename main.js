@@ -15,7 +15,7 @@ let SchellenbergBridge = null;
 
 // Default gateway parameters
 const defaultPort = 4900;
-const defaultShcVersion = "2.22.3";
+const defaultShcVersion = "3.3.6";
 const defaultShcApiVersion = "2.20";
 const defaultCSymbol = "D19033i";
 
