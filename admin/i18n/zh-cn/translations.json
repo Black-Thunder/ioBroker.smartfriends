@@ -1,4 +1,6 @@
 {
+    "Advanced options": "高级选项",
+    "Connection details": "连接细节",
     "Enter the CSymbol specific for your gateway": "输入特定于您的网关的CSymbol",
     "Enter the SHAPIVersion specific for your gateway": "输入特定于您的网关的SHAPIVersion",
     "Enter the SHCVersion specific for your gateway": "输入特定于您的网关的SHCVersion",

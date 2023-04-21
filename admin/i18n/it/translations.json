@@ -1,4 +1,6 @@
 {
+    "Advanced options": "Opzioni avanzate",
+    "Connection details": "Dettagli di connessione",
     "Enter the CSymbol specific for your gateway": "Immettere il simbolo CS specifico per il gateway",
     "Enter the SHAPIVersion specific for your gateway": "Inserisci la SHAPIVersion specifica per il tuo gateway",
     "Enter the SHCVersion specific for your gateway": "Immettere la SHCVersion specifica per il gateway",

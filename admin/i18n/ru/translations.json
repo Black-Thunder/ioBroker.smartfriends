@@ -1,4 +1,6 @@
 {
+    "Advanced options": "Расширенные настройки",
+    "Connection details": "Детали подключения",
     "Enter the CSymbol specific for your gateway": "Введите CSymbol, специфичный для вашего шлюза",
     "Enter the SHAPIVersion specific for your gateway": "Введите SHAPIVersion для вашего шлюза",
     "Enter the SHCVersion specific for your gateway": "Введите SHCVersion для вашего шлюза",

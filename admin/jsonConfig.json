@@ -2,9 +2,9 @@
 	"type": "tabs",
 	"i18n": true,
 	"items": {
-		"credentialsTab": {
+		"connectionTab": {
 			"type": "panel",
-			"label": "Login details",
+			"label": "Connection details",
 			"items": {
 				"smartFriendsIP": {
 					"type": "text",
@@ -38,7 +38,7 @@
 		},
 		"optionsTab": {
 			"type": "panel",
-			"label": "Options",
+			"label": "Advanced options",
 			"items": {
 				"smartFriendsCSymbol": {
 					"type": "text",
