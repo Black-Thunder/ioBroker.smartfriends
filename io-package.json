@@ -44,7 +44,7 @@
       "uk": "розумні друзі"
     },
     "authors": [
-      "BlackThunder <glwars@aol.de>"
+      "Black-Thunder <glwars@aol.de>"
     ],
     "keywords": [
       "home automation",
@@ -64,6 +64,9 @@
     "compact": true,
     "connectionType": "local",
     "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
     "materialize": true,
     "dependencies": [
       {
