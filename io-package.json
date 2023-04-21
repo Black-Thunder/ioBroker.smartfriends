@@ -1,94 +1,92 @@
 {
-    "common": {
-        "name": "smartfriends",
-        "version": "0.0.1",
-        "news": {
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版",
-                "uk": "початковий випуск"
-            }
-        },
-        "titleLang": {
-            "en": "SmartFriends",
-            "de": "SmartFriends",
-            "ru": "SmartFriends",
-            "pt": "SmartFriends",
-            "nl": "SmartFriends",
-            "fr": "SmartFriends",
-            "it": "SmartFriends",
-            "es": "Amigos inteligentes",
-            "pl": "SmartFriends",
-            "zh-cn": "SmartFriends",
-            "uk": "SmartFriends"
-        },
-        "desc": {
-            "en": "smartfriends",
-            "de": "Smartfriends",
-            "ru": "умные друзья",
-            "pt": "amigos inteligentes",
-            "nl": "slimme vrienden",
-            "fr": "amis intelligents",
-            "it": "amici intelligenti",
-            "es": "amigos inteligentes",
-            "pl": "smartfriends",
-            "zh-cn": "聪明的朋友",
-            "uk": "розумні друзі"
-        },
-        "authors": [
-            "BlackThunder <glwars@aol.de>"
-        ],
-        "keywords": [
-            "ioBroker",
-            "Smart Home",
-            "home automation",
-            "smartfriends",
-            "schellenberg"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "smartfriends.png",
-        "enabled": false,
-        "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
-        "readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "iot-systems",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "materialize": true,
-        "dependencies": [
-            {
-                "js-controller": ">=3.3.22"
-            }
-        ],
-        "tier": 2
+  "common": {
+    "name": "smartfriends",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版",
+        "uk": "початковий випуск"
+      }
     },
-    "encryptedNative": [
-        "smartFriendsPassword"
-    ],
-    "protectedNative": [
-        "smartFriendsPassword"
-    ],
-    "native": {
-        "smartFriendsPort": 4300,
-        "smartFriendsIP": "",
-        "smartFriendsUsername": "",
-        "smartFriendsPassword": "",
-        "smartFriendsCSymbol": "D19033i",
-        "smartFriendsShcVersion": "2.22.3",
-        "smartFriendsShApiVersion": "2.20"
+    "titleLang": {
+      "en": "SmartFriends",
+      "de": "SmartFriends",
+      "ru": "SmartFriends",
+      "pt": "SmartFriends",
+      "nl": "SmartFriends",
+      "fr": "SmartFriends",
+      "it": "SmartFriends",
+      "es": "Amigos inteligentes",
+      "pl": "SmartFriends",
+      "zh-cn": "SmartFriends",
+      "uk": "SmartFriends"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "smartfriends",
+      "de": "Smartfriends",
+      "ru": "умные друзья",
+      "pt": "amigos inteligentes",
+      "nl": "slimme vrienden",
+      "fr": "amis intelligents",
+      "it": "amici intelligenti",
+      "es": "amigos inteligentes",
+      "pl": "smartfriends",
+      "zh-cn": "聪明的朋友",
+      "uk": "розумні друзі"
+    },
+    "authors": [
+      "BlackThunder <glwars@aol.de>"
+    ],
+    "keywords": [
+      "home automation",
+      "smartfriends",
+      "schellenberg"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "smartfriends.png",
+    "enabled": false,
+    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
+    "readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "iot-systems",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "materialize": true,
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "tier": 2
+  },
+  "encryptedNative": [
+    "smartFriendsPassword"
+  ],
+  "protectedNative": [
+    "smartFriendsPassword"
+  ],
+  "native": {
+    "smartFriendsPort": 4300,
+    "smartFriendsIP": "",
+    "smartFriendsUsername": "",
+    "smartFriendsPassword": "",
+    "smartFriendsCSymbol": "D19033i",
+    "smartFriendsShcVersion": "2.22.3",
+    "smartFriendsShApiVersion": "2.20"
+  },
+  "objects": [],
+  "instanceObjects": []
 }
