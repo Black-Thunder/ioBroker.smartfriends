@@ -35,21 +35,8 @@ class Smartfriends extends utils.Adapter {
 		gthis = this;
 	}
 
-	async decryptPassword() {
-		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
-		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
-			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
-				this.config.smartFriendsPassword = commonDefines.decrypt(sysConfigObject.native.secret, this.config.smartFriendsPassword);
-			} else {
-				this.config.smartFriendsPassword = commonDefines.decrypt("Zgfr56gFe87jJOM", this.config.smartFriendsPassword);
-			}
-		}
-	}
-
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
-
-		this.decryptPassword();
 
 		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
 			this.log.warn(`Port was not correctly set. Defaulting to '${defaultPort}'.`);
