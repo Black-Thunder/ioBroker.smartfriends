@@ -51,9 +51,11 @@
       "smartfriends",
       "schellenberg"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "smartfriends.png",
     "enabled": false,
     "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
