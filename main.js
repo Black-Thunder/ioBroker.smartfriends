@@ -10,7 +10,7 @@ const schellenbergBridge = require("./lib/SchellenbergBridge");
 const commonDefines = require("./lib/helpers/CommonDefines");
 const commandFactory = require("./lib/comunication/CommandFactory");
 
-let gthis = null; // global to 'this' of Melcloud main instance
+let gthis = null; // global to 'this' of smartfriends main instance
 let SchellenbergBridge = null;
 
 // Default gateway parameters
