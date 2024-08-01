@@ -5,7 +5,7 @@ name: Test and Release
 on:
   push:
     branches:
-      - master
+      - "master"
     tags:
       # normal versions
       - "v[0-9]+.[0-9]+.[0-9]+"
@@ -19,116 +19,70 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Runs unit tests on all supported node versions and OSes
-  unit-tests:
+  # Performs quick checks before the expensive test runs
+  check-and-lint:
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ioBroker/testing-action-check@v1
+        with:
+          node-version: "20.x"
+          # Uncomment the following line if your adapter cannot be installed using 'npm ci'
+          # install-command: 'npm install'
+          lint: true
+
+  # Runs adapter tests on all supported node versions and OSes
+  adapter-tests:
     if: contains(github.event.head_commit.message, '[skip ci]') == false
 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
-        os: [ubuntu-latest]
+        node-version: [18.x, 20.x, 22.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: ioBroker/testing-action-adapter@v1
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          os: ${{ matrix.os }}
+          # Uncomment the following line if your adapter cannot be installed using 'npm ci'
+          # install-command: 'npm install'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run component tests
-        run: npm t
-        env:
-          REQUEST_TIMEOUT: 20000
-          TESTING: true
-
-      - name: Test template creation
-        run: bash .github/test_template_creation.sh
-        env:
-          REQUEST_TIMEOUT: 20000
-          TESTING: true
-
-      - name: Compile TypeScript code
-        run: npm run build
-
-      - name: Start the CLI on a production environment
-        run: |
-          npm ci --omit=dev
-          TEST_STARTUP=true node ./bin/create-adapter.js
-    # TODO: Test the console output
-
-  # ===================
-
-  # Deploys the final package to NPM and Github Releases
+  # Deploys the final package to NPM
   deploy:
-    # Trigger this step only when a commit is tagged with a version number
+    needs: [check-and-lint, adapter-tests]
+
+    # Trigger this step only when a commit on any branch is tagged with a version number
     if: |
       contains(github.event.head_commit.message, '[skip ci]') == false &&
       github.event_name == 'push' &&
       startsWith(github.ref, 'refs/tags/v')
 
-    needs: [unit-tests]
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
+
+    # Write permissions are required to create Github releases
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: ioBroker/testing-action-deploy@v1
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: "18.x"
+          # Uncomment the following line if your adapter cannot be installed using 'npm ci'
+          # install-command: 'npm install'
+          npm-token: ${{ secrets.NPM_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract the version and commit body from the tag
-        id: extract_release
-        # The body may be multiline, therefore we need to escape some characters
-        run: |
-          VERSION="${{ github.ref }}"
-          VERSION=${VERSION##*/v}
-          echo "::set-output name=VERSION::$VERSION"
-          BODY=$(git show -s --format=%b)
-          BODY="${BODY//'%'/'%25'}"
-          BODY="${BODY//$'\n'/'%0A'}"
-          BODY="${BODY//$'\r'/'%0D'}"
-          echo "::set-output name=BODY::$BODY"
-
-      - name: Install dependencies
-        run: npm ci
-
-      # This is unnecessary, since npm publish will run prepublishOnly, which will run build
-      # - name: Create a clean build
-      #   run: npm run build
-
-      - name: Publish package to npm
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
-          npm whoami
-          npm publish
-
-      - name: Create Github Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release v${{ steps.extract_release.outputs.VERSION }}
-          draft: false
-          # Prerelease versions create prereleases on Github
-          prerelease: ${{ contains(steps.extract_release.outputs.VERSION, '-') }}
-          body: ${{ steps.extract_release.outputs.BODY }}
-
-      - name: Update ioBroker.template repo
-        run: bash .github/update_templates.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.ALCALZONE_GITHUB_TOKEN }}
+          # When using Sentry for error reporting, Sentry can be informed about new releases
+          # To enable create a API-Token in Sentry (User settings, API keys)
+          # Enter this token as a GitHub secret (with name SENTRY_AUTH_TOKEN) in the repository options
+          # Then uncomment and customize the following block:
+          #  sentry: true
+          #  sentry-token: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          #  sentry-project: "iobroker-roborock"
+          #  sentry-version-prefix: "iobroker.roborock"
+          #  # If your sentry project is linked to a GitHub repository, you can enable the following option
+          #  # sentry-github-integration: true
