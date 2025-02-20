@@ -72,12 +72,12 @@
     "materialize": true,
     "dependencies": [
       {
-        "js-controller": ">=3.3.22"
+        "js-controller": ">=5.0.19"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=5.1.13"
+        "admin": ">=7.4.10"
       }
     ],
     "tier": 2
@@ -92,8 +92,9 @@
     "smartFriendsPort": 4300,
     "smartFriendsIP": "",
     "smartFriendsUsername": "",
+    "smartFriendsPassword": "",
     "smartFriendsCSymbol": "D19033i",
-    "smartFriendsShcVersion": "3.6.0",
+    "smartFriendsShcVersion": "3.6.4",
     "smartFriendsShApiVersion": "3.3"
   },
   "objects": [],
