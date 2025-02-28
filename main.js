@@ -217,8 +217,14 @@ class Smartfriends extends utils.Adapter {
 				case (commonDefines.AdapterStateIDs.MoveDown):
 					controlCommand = commonDefines.DeviceCommands.MoveDown;
 					break;
+				case (commonDefines.AdapterStateIDs.Close):
+					controlCommand = commonDefines.DeviceCommands.Close;
+					break;
 				case (commonDefines.AdapterStateIDs.MoveUp):
 					controlCommand = commonDefines.DeviceCommands.MoveUp;
+					break;
+				case (commonDefines.AdapterStateIDs.Open):
+					controlCommand = commonDefines.DeviceCommands.Open;
 					break;
 				case (commonDefines.AdapterStateIDs.MoveStop):
 					controlCommand = commonDefines.DeviceCommands.MoveStop;
@@ -231,7 +237,7 @@ class Smartfriends extends utils.Adapter {
 			if (deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
 				this.log.debug(`Sending command '${controlCommand.name}' to device ${deviceId}...`);
 				SchellenbergBridge.sendAndReceiveCommand(commandFactory.default.createSetDeviceValueCmd(deviceId, controlCommand.value));
-				this.setStateAsync(id, false, true);
+				this.setState(id, false, true);
 			}
 		} else {
 			// The state was deleted
