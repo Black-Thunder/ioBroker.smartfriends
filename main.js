@@ -8,7 +8,7 @@
 const utils = require("@iobroker/adapter-core");
 const schellenbergBridge = require("./lib/SchellenbergBridge");
 const commonDefines = require("./lib/helpers/CommonDefines");
-const commandFactory = require("./lib/comunication/CommandFactory");
+const DeviceManager = require("./lib/DeviceManager");
 
 let gthis = null; // global to 'this' of smartfriends main instance
 let SchellenbergBridge = null;
@@ -18,6 +18,39 @@ const defaultPort = 4900;
 const defaultShcVersion = "3.6.4";
 const defaultShcApiVersion = "3.3";
 const defaultCSymbol = "D19033i";
+
+class ConfigValidator {
+	static validate(config) {
+		// Add input type validation
+		const validations = {
+			smartFriendsIP: (ip) => typeof ip === "string" && ip.length > 0,
+			smartFriendsPort: (port) => typeof port === "number" && port > 0,
+			smartFriendsUsername: (user) => typeof user === "string" && user.length > 0,
+			smartFriendsPassword: (pwd) => typeof pwd === "string" && pwd.length > 0
+		};
+
+		const errors = Object.entries(validations)
+			.filter(([key, validator]) => !validator(config[key]))
+			.map(([key]) => `Invalid ${key}`);
+
+		if (errors.length) {
+			throw new Error(errors.join(", "));
+		}
+
+		const defaults = {
+			port: defaultPort,
+			cSymbol: defaultCSymbol,
+			shcVersion: defaultShcVersion,
+			shApiVersion: defaultShcApiVersion
+		};
+
+		// Set defaults
+		config.smartFriendsPort = config.smartFriendsPort || defaults.port;
+		config.smartFriendsCSymbol = config.smartFriendsCSymbol || defaults.cSymbol;
+		config.smartFriendsShcVersion = config.smartFriendsShcVersion || defaults.shcVersion;
+		config.smartFriendsShApiVersion = config.smartFriendsShApiVersion || defaults.shApiVersion;
+	}
+}
 
 class Smartfriends extends utils.Adapter {
 
@@ -32,43 +65,13 @@ class Smartfriends extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		this.deviceManager = new DeviceManager(this);
 		gthis = this;
 	}
 
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
-
-		if (this.config.smartFriendsPort == null || this.config.smartFriendsPort <= 0) {
-			this.log.warn(`Port was not correctly set. Defaulting to '${defaultPort}'.`);
-			this.config.smartFriendsPort = defaultPort;
-		}
-
-		if (this.config.smartFriendsIP == null || this.config.smartFriendsIP == "") {
-			throw new Error("IP address empty! Check settings.");
-		}
-
-		if (this.config.smartFriendsUsername == null || this.config.smartFriendsUsername == "") {
-			throw new Error("Username empty! Check settings.");
-		}
-
-		if (this.config.smartFriendsPassword == null || this.config.smartFriendsPassword == "") {
-			throw new Error("Password empty! Check settings.");
-		}
-
-		if (this.config.smartFriendsCSymbol == null || this.config.smartFriendsCSymbol == "") {
-			this.log.warn(`CSymbol was not correctly set. Defaulting to '${defaultCSymbol}.`);
-			this.config.smartFriendsCSymbol = defaultCSymbol;
-		}
-
-		if (this.config.smartFriendsShcVersion == null || this.config.smartFriendsShcVersion == "") {
-			this.log.warn(`SHCVersion was not correctly set. Defaulting to '${defaultShcVersion}'.`);
-			this.config.smartFriendsShcVersion = defaultShcVersion;
-		}
-
-		if (this.config.smartFriendsShApiVersion == null || this.config.smartFriendsShApiVersion == "") {
-			this.log.warn(`SHAPIVersion was not correctly set. Defaulting to '${defaultShcApiVersion}'.`);
-			this.config.smartFriendsShApiVersion = defaultShcApiVersion;
-		}
+		ConfigValidator.validate(this.config);
 	}
 
 	async initObjects() {
@@ -145,6 +148,7 @@ class Smartfriends extends utils.Adapter {
 		gthis.log.debug(`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - Username: ${this.config.smartFriendsUsername} - Password: ${this.config.smartFriendsPassword} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
+		this.deviceManager.setBridge(SchellenbergBridge);
 		SchellenbergBridge.Connect();
 	}
 
@@ -191,56 +195,11 @@ class Smartfriends extends utils.Adapter {
 	 * @param {string} id
 	 * @param {ioBroker.State | null | undefined} state
 	 */
-	onStateChange(id, state) {
+	async onStateChange(id, state) {
 		if (state) {
-			// The state was changed
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-
-			if (state.val == false) {
-				this.log.silly("Only suscribed to val==true. No need to process changed data.");
-				return;
-			}
-
-			// ack is true when state was updated by gateway --> in this case, we don't need to send it again
-			if (state.ack) {
-				this.log.silly("Updated data was retrieved from gateway. No need to process changed data.");
-				return;
-			}
-
-			// Only states under "devices.XXX.control" are subscribed --> device settings/modes are changed
-			let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
-			deviceId = deviceId.substring(0, deviceId.indexOf("."));
-
-			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
-			let controlCommand = commonDefines.DeviceCommands.UNDEF;
-			switch (controlOption) {
-				case (commonDefines.AdapterStateIDs.MoveDown):
-					controlCommand = commonDefines.DeviceCommands.MoveDown;
-					break;
-				case (commonDefines.AdapterStateIDs.Close):
-					controlCommand = commonDefines.DeviceCommands.Close;
-					break;
-				case (commonDefines.AdapterStateIDs.MoveUp):
-					controlCommand = commonDefines.DeviceCommands.MoveUp;
-					break;
-				case (commonDefines.AdapterStateIDs.Open):
-					controlCommand = commonDefines.DeviceCommands.Open;
-					break;
-				case (commonDefines.AdapterStateIDs.MoveStop):
-					controlCommand = commonDefines.DeviceCommands.MoveStop;
-					break;
-				default:
-					this.log.error(`Unsupported control option: ${controlOption} - Please report this to the developer!`);
-					break;
-			}
-
-			if (deviceId != "" && controlCommand != commonDefines.DeviceCommands.UNDEF) {
-				this.log.debug(`Sending command '${controlCommand.name}' to device ${deviceId}...`);
-				SchellenbergBridge.sendAndReceiveCommand(commandFactory.default.createSetDeviceValueCmd(deviceId, controlCommand.value));
-				this.setState(id, false, true);
-			}
+			await this.deviceManager.handleStateChange(id, state);
 		} else {
-			// The state was deleted
 			this.log.silly(`state ${id} deleted`);
 		}
 	}
