@@ -62,10 +62,11 @@ class Smartfriends extends utils.Adapter {
 			...options,
 			name: "smartfriends",
 		});
+
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-		this.deviceManager = new DeviceManager(this);
+
 		gthis = this;
 	}
 
@@ -77,70 +78,78 @@ class Smartfriends extends utils.Adapter {
 	async initObjects() {
 		this.log.debug("Initializing objects...");
 
-		// info
-		let infoPrefix = commonDefines.AdapterDatapointIDs.Info;
-		await this.setObjectNotExistsAsync(infoPrefix, {
-			type: "channel",
-			common: {
-				name: "Adapter information"
-			},
-			native: {}
-		});
+		try {
+			// Initialize DeviceManager here when adapter is ready
+			this.deviceManager = new DeviceManager(this);
 
-		infoPrefix += ".";
+			// info
+			let infoPrefix = commonDefines.AdapterDatapointIDs.Info;
+			await this.setObjectNotExistsAsync(infoPrefix, {
+				type: "channel",
+				common: {
+					name: "Adapter information"
+				},
+				native: {}
+			});
 
-		await this.setObjectNotExistsAsync(infoPrefix + commonDefines.AdapterStateIDs.Connection, {
-			type: "state",
-			common: {
-				name: "Connection to gateway",
-				type: "boolean",
-				role: "indicator.connected",
-				read: true,
-				write: false,
-				desc: "Indicates if connection to SmartFriendsBox was successful or not"
-			},
-			native: {}
-		});
+			infoPrefix += ".";
 
-		// gateway
-		let gatewayPrefix = commonDefines.AdapterDatapointIDs.Gateway;
-		await this.setObjectNotExistsAsync(gatewayPrefix, {
-			type: "channel",
-			common: {
-				name: "Gateway information"
-			},
-			native: {}
-		});
+			await this.setObjectNotExistsAsync(infoPrefix + commonDefines.AdapterStateIDs.Connection, {
+				type: "state",
+				common: {
+					name: "Connection to gateway",
+					type: "boolean",
+					role: "indicator.connected",
+					read: true,
+					write: false,
+					desc: "Indicates if connection to SmartFriendsBox was successful or not"
+				},
+				native: {}
+			});
 
-		gatewayPrefix += ".";
+			// gateway
+			let gatewayPrefix = commonDefines.AdapterDatapointIDs.Gateway;
+			await this.setObjectNotExistsAsync(gatewayPrefix, {
+				type: "channel",
+				common: {
+					name: "Gateway information"
+				},
+				native: {}
+			});
 
-		await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.HardwareName, {
-			type: "state",
-			common: {
-				name: "Hardware name",
-				type: "string",
-				role: "text",
-				read: true,
-				write: false,
-				desc: "Actual Hardware name"
-			},
-			native: {}
-		});
+			gatewayPrefix += ".";
 
-		await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.MacAddress, {
-			type: "state",
-			common: {
-				name: "Hardware MAC address",
-				type: "string",
-				role: "info.mac",
-				read: true,
-				write: false,
-				desc: "Hardware MAC address"
-			},
-			native: {}
-		});
+			await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.HardwareName, {
+				type: "state",
+				common: {
+					name: "Hardware name",
+					type: "string",
+					role: "text",
+					read: true,
+					write: false,
+					desc: "Actual Hardware name"
+				},
+				native: {}
+			});
 
-		this.setAdapterConnectionState(false);
+			await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.MacAddress, {
+				type: "state",
+				common: {
+					name: "Hardware MAC address",
+					type: "string",
+					role: "info.mac",
+					read: true,
+					write: false,
+					desc: "Hardware MAC address"
+				},
+				native: {}
+			});
+
+			this.setAdapterConnectionState(false);
+		} catch (error) {
+			this.log.error(`Failed to initialize objects: ${error.message}`);
+			throw error;
+		}
 	}
 
 	async connectToGateway() {
