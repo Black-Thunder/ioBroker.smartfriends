@@ -15,8 +15,8 @@ let SchellenbergBridge = null;
 
 // Default gateway parameters
 const defaultPort = 4900;
-const defaultShcVersion = "3.6.4";
-const defaultShcApiVersion = "3.3";
+const defaultShcVersion = "3.7.0";
+const defaultShcApiVersion = "3.4";
 const defaultCSymbol = "D19033i";
 
 class ConfigValidator {
