@@ -10,7 +10,6 @@ const schellenbergBridge = require("./lib/SchellenbergBridge");
 const commonDefines = require("./lib/helpers/CommonDefines");
 const DeviceManager = require("./lib/DeviceManager");
 
-let gthis = null; // global to 'this' of smartfriends main instance
 let SchellenbergBridge = null;
 
 // Default gateway parameters
@@ -23,10 +22,10 @@ class ConfigValidator {
 	static validate(config) {
 		// Add input type validation
 		const validations = {
-			smartFriendsIP: (ip) => typeof ip === "string" && ip.length > 0,
-			smartFriendsPort: (port) => typeof port === "number" && port > 0,
-			smartFriendsUsername: (user) => typeof user === "string" && user.length > 0,
-			smartFriendsPassword: (pwd) => typeof pwd === "string" && pwd.length > 0
+			smartFriendsIP: ip => typeof ip === "string" && ip.length > 0,
+			smartFriendsPort: port => typeof port === "number" && port > 0,
+			smartFriendsUsername: user => typeof user === "string" && user.length > 0,
+			smartFriendsPassword: pwd => typeof pwd === "string" && pwd.length > 0,
 		};
 
 		const errors = Object.entries(validations)
@@ -41,7 +40,7 @@ class ConfigValidator {
 			port: defaultPort,
 			cSymbol: defaultCSymbol,
 			shcVersion: defaultShcVersion,
-			shApiVersion: defaultShcApiVersion
+			shApiVersion: defaultShcApiVersion,
 		};
 
 		// Set defaults
@@ -53,9 +52,8 @@ class ConfigValidator {
 }
 
 class Smartfriends extends utils.Adapter {
-
 	/**
-	 * @param {Partial<utils.AdapterOptions>} [options={}]
+	 * @param {Partial<utils.AdapterOptions>} [options]
 	 */
 	constructor(options) {
 		super({
@@ -66,8 +64,6 @@ class Smartfriends extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-
-		gthis = this;
 	}
 
 	async checkSettings() {
@@ -87,9 +83,9 @@ class Smartfriends extends utils.Adapter {
 			await this.setObjectNotExistsAsync(infoPrefix, {
 				type: "channel",
 				common: {
-					name: "Adapter information"
+					name: "Adapter information",
 				},
-				native: {}
+				native: {},
 			});
 
 			infoPrefix += ".";
@@ -102,9 +98,9 @@ class Smartfriends extends utils.Adapter {
 					role: "indicator.connected",
 					read: true,
 					write: false,
-					desc: "Indicates if connection to SmartFriendsBox was successful or not"
+					desc: "Indicates if connection to SmartFriendsBox was successful or not",
 				},
-				native: {}
+				native: {},
 			});
 
 			// gateway
@@ -112,9 +108,9 @@ class Smartfriends extends utils.Adapter {
 			await this.setObjectNotExistsAsync(gatewayPrefix, {
 				type: "channel",
 				common: {
-					name: "Gateway information"
+					name: "Gateway information",
 				},
-				native: {}
+				native: {},
 			});
 
 			gatewayPrefix += ".";
@@ -127,9 +123,9 @@ class Smartfriends extends utils.Adapter {
 					role: "text",
 					read: true,
 					write: false,
-					desc: "Actual Hardware name"
+					desc: "Actual Hardware name",
 				},
-				native: {}
+				native: {},
 			});
 
 			await this.setObjectNotExistsAsync(gatewayPrefix + commonDefines.AdapterStateIDs.MacAddress, {
@@ -140,9 +136,9 @@ class Smartfriends extends utils.Adapter {
 					role: "info.mac",
 					read: true,
 					write: false,
-					desc: "Hardware MAC address"
+					desc: "Hardware MAC address",
 				},
-				native: {}
+				native: {},
 			});
 
 			this.setAdapterConnectionState(false);
@@ -153,16 +149,22 @@ class Smartfriends extends utils.Adapter {
 	}
 
 	async connectToGateway() {
-		gthis.log.info("Connecting to gateway and retrieving data...");
-		gthis.log.debug(`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - Username: ${this.config.smartFriendsUsername} - Password: ${this.config.smartFriendsPassword} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`);
+		this.log.info("Connecting to gateway and retrieving data...");
+		this.log.debug(
+			`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - Username: ${this.config.smartFriendsUsername} - Password: ${this.config.smartFriendsPassword} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`,
+		);
 
-		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(gthis);
+		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(this);
 		this.deviceManager.setBridge(SchellenbergBridge);
 		SchellenbergBridge.Connect();
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateChangedAsync(`${commonDefines.AdapterDatapointIDs.Info}.${commonDefines.AdapterStateIDs.Connection}`, isConnected, true);
+		await this.setStateChangedAsync(
+			`${commonDefines.AdapterDatapointIDs.Info}.${commonDefines.AdapterStateIDs.Connection}`,
+			isConnected,
+			true,
+		);
 		await this.setForeignState(`system.adapter.${this.namespace}.connected`, isConnected, true);
 	}
 
@@ -193,8 +195,7 @@ class Smartfriends extends utils.Adapter {
 			this.log.info("onUnload(): Cleaned everything up...");
 
 			callback();
-			// eslint-disable-next-line no-unused-vars
-		} catch (e) {
+		} catch {
 			callback();
 		}
 	}
@@ -214,13 +215,13 @@ class Smartfriends extends utils.Adapter {
 	}
 }
 
-// @ts-ignore parent is a valid property on module
+// @ts-expect-error parent is a valid property on module
 if (module.parent) {
 	// Export the constructor in compact mode
 	/**
-	 * @param {Partial<utils.AdapterOptions>} [options={}]
+	 * @param {Partial<utils.AdapterOptions>} [options]
 	 */
-	module.exports = (options) => new Smartfriends(options);
+	module.exports = options => new Smartfriends(options);
 } else {
 	// otherwise start the instance directly
 	new Smartfriends();

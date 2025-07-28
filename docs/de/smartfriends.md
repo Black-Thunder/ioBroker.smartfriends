@@ -4,9 +4,10 @@
 
 Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen getroffen werden:
 
-* ...
+- ...
 
 ### Unterstützte Geräte
+
 ...
 
 ## Konfiguration
@@ -30,24 +31,24 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 
 ### smartfriends.X.info
 
-| ID | lesbar | änderbar | Bemerkung |
-|--- | :---: | :---: |--- |
-| connection | X | - | Gibt den Verbindungsstatus zum Gateway an |
+| ID         | lesbar | änderbar | Bemerkung                                 |
+| ---------- | :----: | :------: | ----------------------------------------- |
+| connection |   X    |    -     | Gibt den Verbindungsstatus zum Gateway an |
 
 ### smartfriends.X.gateway
 
-| ID | lesbar | änderbar | Bemerkung |
-|--- | :---: | :---: |--- |
-| ... | X | - | ... |
+| ID  | lesbar | änderbar | Bemerkung |
+| --- | :----: | :------: | --------- |
+| ... |   X    |    -     | ...       |
 
 ### smartfriends.X.device.Y.info
 
-| ID | lesbar | änderbar | Bemerkung |
-|--- | :---: | :---: |--- |
-| .... | X | - | ... |
+| ID   | lesbar | änderbar | Bemerkung |
+| ---- | :----: | :------: | --------- |
+| .... |   X    |    -     | ...       |
 
 ### smartfriends.X.device.Y.control
 
-| ID | lesbar | änderbar | Bemerkung |
-|--- | :---: | :---: |--- |
-| .... | X | - | ... |
+| ID   | lesbar | änderbar | Bemerkung |
+| ---- | :----: | :------: | --------- |
+| .... |   X    |    -     | ...       |

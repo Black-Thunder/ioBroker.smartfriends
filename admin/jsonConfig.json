@@ -1,88 +1,88 @@
 {
-  "type": "tabs",
-  "tabsStyle": {
-    "width": "calc(100% - 100px)"
-  },
-  "i18n": true,
-  "items": {
-    "connectionTab": {
-      "type": "panel",
-      "label": "Connection details",
-      "items": {
-        "smartFriendsIP": {
-          "type": "text",
-          "label": "IP address",
-          "newLine": false,
-          "tooltip": "Enter your SmartFriendsBox IP address",
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        },
-        "smartFriendsUsername": {
-          "type": "text",
-          "label": "Username",
-          "newLine": true,
-          "tooltip": "Enter your SmartFriendsBox username",
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        },
-        "smartFriendsPassword": {
-          "type": "password",
-          "label": "Password",
-          "newLine": false,
-          "tooltip": "Enter your SmartFriendsBox password",
-          "visible": true,
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        }
-      }
-    },
-    "optionsTab": {
-      "type": "panel",
-      "label": "Advanced options",
-      "items": {
-        "smartFriendsCSymbol": {
-          "type": "text",
-          "label": "CSymbol",
-          "newLine": true,
-          "tooltip": "Enter the CSymbol specific for your gateway",
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        },
-        "smartFriendsShcVersion": {
-          "type": "text",
-          "label": "SHCVersion",
-          "newLine": true,
-          "tooltip": "Enter the SHCVersion specific for your gateway",
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        },
-        "smartFriendsShApiVersion": {
-          "type": "text",
-          "label": "SHAPIVersion",
-          "newLine": true,
-          "tooltip": "Enter the SHAPIVersion specific for your gateway",
-          "xs": 12,
-          "sm": 12,
-          "md": 6,
-          "lg": 4,
-          "xl": 4
-        }
-      }
-    }
-  }
+	"type": "tabs",
+	"tabsStyle": {
+		"width": "calc(100% - 100px)"
+	},
+	"i18n": true,
+	"items": {
+		"connectionTab": {
+			"type": "panel",
+			"label": "Connection details",
+			"items": {
+				"smartFriendsIP": {
+					"type": "text",
+					"label": "IP address",
+					"newLine": false,
+					"tooltip": "Enter your SmartFriendsBox IP address",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"smartFriendsUsername": {
+					"type": "text",
+					"label": "Username",
+					"newLine": true,
+					"tooltip": "Enter your SmartFriendsBox username",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"smartFriendsPassword": {
+					"type": "password",
+					"label": "Password",
+					"newLine": false,
+					"tooltip": "Enter your SmartFriendsBox password",
+					"visible": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				}
+			}
+		},
+		"optionsTab": {
+			"type": "panel",
+			"label": "Advanced options",
+			"items": {
+				"smartFriendsCSymbol": {
+					"type": "text",
+					"label": "CSymbol",
+					"newLine": true,
+					"tooltip": "Enter the CSymbol specific for your gateway",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"smartFriendsShcVersion": {
+					"type": "text",
+					"label": "SHCVersion",
+					"newLine": true,
+					"tooltip": "Enter the SHCVersion specific for your gateway",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
+				"smartFriendsShApiVersion": {
+					"type": "text",
+					"label": "SHAPIVersion",
+					"newLine": true,
+					"tooltip": "Enter the SHAPIVersion specific for your gateway",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				}
+			}
+		}
+	}
 }

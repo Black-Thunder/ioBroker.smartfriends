@@ -1,4 +1,5 @@
 ![Logo](admin/smartfriends.png)
+
 # ioBroker.smartfriends
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.smartfriends.svg)](https://www.npmjs.com/package/iobroker.smartfriends)
@@ -17,23 +18,27 @@ This adapter integrates the SmartFriends-ecosystem directly using the gateway (S
 
 Documentation:
 
-* [Forum thread] TODO
-* [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/smartfriends.md)
-* [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/smartfriends.md)
+- [Forum thread] TODO
+- [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/smartfriends.md)
+- [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/smartfriends.md)
 
 ## Changelog
+
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
-* (Black-Thunder) initial release
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) initial release
 
 ## Acknowledgements
+
 Special thanks und credits to [LoPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
 
 ## License
+
 MIT License
 
 Copyright (c) 2025 Black-Thunder <glwars@aol.de>
