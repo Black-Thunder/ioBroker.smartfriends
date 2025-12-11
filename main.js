@@ -155,7 +155,11 @@ class Smartfriends extends utils.Adapter {
 		);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(this);
-		this.deviceManager.setBridge(SchellenbergBridge);
+
+		if (this.deviceManager != null) {
+			this.deviceManager.setBridge(SchellenbergBridge);
+		}
+
 		SchellenbergBridge.Connect();
 	}
 
@@ -208,7 +212,9 @@ class Smartfriends extends utils.Adapter {
 	async onStateChange(id, state) {
 		if (state) {
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-			await this.deviceManager.handleStateChange(id, state);
+			if (this.deviceManager != null) {
+				await this.deviceManager.handleStateChange(id, state);
+			}
 		} else {
 			this.log.silly(`state ${id} deleted`);
 		}
