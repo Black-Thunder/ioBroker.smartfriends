@@ -44,18 +44,18 @@ Once the adapter instance (X) is successfully (=green) started, devices and data
 
 ### smartfriends.X.gateway
 
-| ID           | lesbar | änderbar | Bemerkung                       |
-| ------------ | :----: | :------: | ------------------------------- |
-| hardwareName |   X    |    -     | Name of the used gateway        |
-| macAddress   |   X    |    -     | MAC address of the used gateway |
+| ID           | read | write | comment                         |
+| ------------ | :--: | :---: | ------------------------------- |
+| hardwareName |  X   |   -   | Name of the used gateway        |
+| macAddress   |  X   |   -   | MAC address of the used gateway |
 
 ### smartfriends.X.device.Y.info
 
-| ID          | lesbar | änderbar | Bemerkung                       |
-| ----------- | :----: | :------: | ------------------------------- |
-| designation |   X    |    -     | Device designation              |
-| deviceName  |   X    |    -     | User-defined name of the device |
-| typeClient  |   X    |    -     | Device type                     |
+| ID          | read | write | comment                         |
+| ----------- | :--: | :---: | ------------------------------- |
+| designation |  X   |   -   | Device designation              |
+| deviceName  |  X   |   -   | User-defined name of the device |
+| typeClient  |  X   |   -   | Device type                     |
 
 ### smartfriends.X.device.Y.control
 
@@ -63,16 +63,16 @@ These states depend on the device type.
 
 #### Wireless Awning Drive
 
-| ID       | lesbar | änderbar | Bemerkung          |
-| -------- | :----: | :------: | ------------------ |
-| moveDown |   -    |    X     | Extend the awning  |
-| moveStop |   -    |    X     | Stop the drive     |
-| moveUp   |   -    |    X     | Retract the awning |
+| ID       | read | write | comment            |
+| -------- | :--: | :---: | ------------------ |
+| moveDown |  -   |   X   | Extend the awning  |
+| moveStop |  -   |   X   | Stop the drive     |
+| moveUp   |  -   |   X   | Retract the awning |
 
 #### Roller Shutter Drive
 
-| ID       | lesbar | änderbar | Bemerkung         |
-| -------- | :----: | :------: | ----------------- |
-| close    |   -    |    X     | Close the shutter |
-| moveStop |   -    |    X     | Stop the drive    |
-| open     |   -    |    X     | Open the shutter  |
+| ID       | read | write | comment           |
+| -------- | :--: | :---: | ----------------- |
+| close    |  -   |   X   | Close the shutter |
+| moveStop |  -   |   X   | Stop the drive    |
+| open     |  -   |   X   | Open the shutter  |
