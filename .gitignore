@@ -15,3 +15,7 @@ admin/i18n/*/flat.txt
 
 .vscode/
 .create-adapter.json
+
+
+# ioBroker dev-server
+.dev-server/

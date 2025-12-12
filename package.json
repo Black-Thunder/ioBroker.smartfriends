@@ -24,14 +24,12 @@
 	},
 	"dependencies": {
 		"@iobroker/adapter-core": "^3.3.2",
-		"base-64": "^1.0.0",
-		"crypto": "^1.0.1",
-		"fs": "0.0.2",
-		"tls": "0.0.1"
+		"base-64": "^1.0.0"
 	},
 	"devDependencies": {
 		"@alcalzone/release-script": "^5.0.0",
 		"@iobroker/adapter-dev": "^1.5.0",
+		"@iobroker/dev-server": "^0.8.0",
 		"@iobroker/eslint-config": "^2.2.0",
 		"@iobroker/testing": "^5.2.2",
 		"@tsconfig/node20": "^20.1.7",
@@ -63,7 +61,8 @@
 		"lint": "eslint -c eslint.config.mjs .",
 		"lint:fix": "eslint -c eslint.config.mjs . --fix",
 		"translate": "translate-adapter",
-		"release": "release-script"
+		"release": "release-script",
+		"dev-server": "dev-server"
 	},
 	"bugs": {
 		"url": "https://github.com/Black-Thunder/ioBroker.smartfriends/issues"
