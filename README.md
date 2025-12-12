@@ -18,7 +18,7 @@ This adapter integrates the SmartFriends-ecosystem directly using the gateway (S
 
 Documentation:
 
-- [Forum thread] TODO
+- [Forum thread](https://forum.iobroker.net/topic/83202)
 - [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/smartfriends.md)
 - [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/smartfriends.md)
 
