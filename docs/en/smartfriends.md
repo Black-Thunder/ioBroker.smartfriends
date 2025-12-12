@@ -2,30 +2,39 @@
 
 ## Prerequisites
 
-In order to use this adapter, there are a few things you have to prepare in advance:
+To use this adapter correctly, the following preparations must be made:
 
-- ...
+- Gateway set up and IP address known
+- (Recommended) Create a dedicated user for the adapter to avoid conflicts
+- All devices to be controlled registered and configured on the gateway
 
 ### Supported devices
 
-...
+Currently, the following device types are supported:
+
+- Wireless awning drive (Type ${Awning})
+- Roller shutter drive (Type "${RollingShutter}")
+
+If unsupported device types appear, a warning will be logged and the device ignored. Please report this with a full debug log in a new issue.
 
 ## Configuration
 
 ![Adapter settings](img/adapter_settings.png)
 
-### General settings
+### Connection details
 
-Here you can configure your adapter instance. Mandatory for the adapter to work are your SmartFriends credentials (username and password) and the IP address of your gateway.
-...
+Here, you can configure the specific adapter instance. The login credentials (username and password) and the IP address of the SmartFriend gateway are required for proper functionality.
 
-### Advanced settings
+### Advanced options
 
-...
+These settings usually do not need to be changed as long as a SmartFriendsBox is used. If using another compatible gateway, the parameters must be adjusted accordingly. Open the SmartFriends app and follow these steps:
+
+![Finding gateway parameters - Step 1](img/find_gateway_parameters_1.png)
+![Finding gateway parameters - Step 2](img/find_gateway_parameters_2.png)
 
 ## Objects
 
-After successful start of the adapter instance (X) your devices are queried from the gateway. For each device (Y) there will be a separate node.
+Once the adapter instance (X) is successfully (=green) started, devices and data from the gateway are retrieved. For each supported device (Y), a separate object node is created.
 
 ### smartfriends.X.info
 
@@ -35,18 +44,35 @@ After successful start of the adapter instance (X) your devices are queried from
 
 ### smartfriends.X.gateway
 
-| id  | read | write | comment |
-| --- | :--: | :---: | ------- |
-| ... |  X   |   -   | ...     |
+| ID           | lesbar | änderbar | Bemerkung                       |
+| ------------ | :----: | :------: | ------------------------------- |
+| hardwareName |   X    |    -     | Name of the used gateway        |
+| macAddress   |   X    |    -     | MAC address of the used gateway |
 
 ### smartfriends.X.device.Y.info
 
-| id   | read | write | comment |
-| ---- | :--: | :---: | ------- |
-| .... |  X   |   -   | ...     |
+| ID          | lesbar | änderbar | Bemerkung                       |
+| ----------- | :----: | :------: | ------------------------------- |
+| designation |   X    |    -     | Device designation              |
+| deviceName  |   X    |    -     | User-defined name of the device |
+| typeClient  |   X    |    -     | Device type                     |
 
 ### smartfriends.X.device.Y.control
 
-| id   | read | write | comment |
-| ---- | :--: | :---: | ------- |
-| .... |  X   |   -   | ...     |
+These states depend on the device type.
+
+#### Wireless Awning Drive
+
+| ID       | lesbar | änderbar | Bemerkung          |
+| -------- | :----: | :------: | ------------------ |
+| moveDown |   -    |    X     | Extend the awning  |
+| moveStop |   -    |    X     | Stop the drive     |
+| moveUp   |   -    |    X     | Retract the awning |
+
+#### Roller Shutter Drive
+
+| ID       | lesbar | änderbar | Bemerkung         |
+| -------- | :----: | :------: | ----------------- |
+| close    |   -    |    X     | Close the shutter |
+| moveStop |   -    |    X     | Stop the drive    |
+| open     |   -    |    X     | Open the shutter  |
