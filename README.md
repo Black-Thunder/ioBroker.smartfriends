@@ -29,7 +29,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
-### **WORK IN PROGRESS**
+### 1.0.0 (2025-12-12)
 
 - (Black-Thunder) initial release
 
