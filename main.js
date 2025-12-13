@@ -151,7 +151,7 @@ class Smartfriends extends utils.Adapter {
 	async connectToGateway() {
 		this.log.info("Connecting to gateway and retrieving data...");
 		this.log.debug(
-			`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - Username: ${this.config.smartFriendsUsername} - Password: ${this.config.smartFriendsPassword} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`,
+			`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`,
 		);
 
 		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(this);
