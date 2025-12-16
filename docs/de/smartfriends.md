@@ -32,6 +32,8 @@ Diese Einstellungen müssen in der Regel nicht geändert werden, solange man ein
 ![Ermitteln der Gateway-Parameter - Schritt 1](img/find_gateway_parameters_1.png)
 ![Ermitteln der Gateway-Parameter - Schritt ](img/find_gateway_parameters_2.png)
 
+Zusätzlich kann hier das Ignorieren von SSL-Fehlern aktiviert werden. Dies sollte nur im Ausnahmefall, z.B. bei Zertifikatsfehlern, verwendet werden.
+
 ## Objekte
 
 Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die Geräte inklusive Daten aus dem Gatewway abgerufen. Für jedes unterstützte Gerät (Y) wird ein separater Objekt-Knoten angelegt.

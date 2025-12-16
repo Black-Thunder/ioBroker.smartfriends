@@ -32,6 +32,8 @@ These settings usually do not need to be changed as long as a SmartFriendsBox is
 ![Finding gateway parameters - Step 1](img/find_gateway_parameters_1.png)
 ![Finding gateway parameters - Step 2](img/find_gateway_parameters_2.png)
 
+Additionally, ignoring SSL errors can be enabled here. This should only be used in exceptional cases, e.g., for certificate errors.
+
 ## Objects
 
 Once the adapter instance (X) is successfully (=green) started, devices and data from the gateway are retrieved. For each supported device (Y), a separate object node is created.
