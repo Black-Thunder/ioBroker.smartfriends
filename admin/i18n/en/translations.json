@@ -13,5 +13,7 @@
 	"advanced_settings": "Advanced settings",
 	"advanced_settings_info": "Typically these settings don't need to be modified unless you are using a non-supported gateway. Please refer to the adapter documentation for more information.",
 	"general_settings": "General settings",
-	"smartfriends adapter settings": "Adapter settings for smartfriends"
+	"smartfriends adapter settings": "Adapter settings for smartfriends",
+	"Ignore SSL errors": "Ignore SSL errors",
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means."
 }

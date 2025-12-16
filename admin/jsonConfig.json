@@ -81,6 +81,17 @@
 					"md": 6,
 					"lg": 4,
 					"xl": 4
+				},
+				"ignoreSslErrors": {
+					"type": "checkbox",
+					"label": "Ignore SSL errors",
+					"newLine": true,
+					"tooltip": "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.",
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
 				}
 			}
 		}

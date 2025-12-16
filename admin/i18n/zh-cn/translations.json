@@ -1,6 +1,7 @@
 {
 	"Advanced options": "高级选项",
 	"Connection details": "连接细节",
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "定义与网关通信时是否忽略 SSL 错误。仅当您知道其含义时才启用。",
 	"Enter the CSymbol specific for your gateway": "输入特定于您的网关的CSymbol",
 	"Enter the SHAPIVersion specific for your gateway": "输入特定于您的网关的SHAPIVersion",
 	"Enter the SHCVersion specific for your gateway": "输入特定于您的网关的SHCVersion",
@@ -8,6 +9,7 @@
 	"Enter your SmartFriendsBox password": "输入您的SmartFriendsBox密码",
 	"Enter your SmartFriendsBox username": "输入您的SmartFriendsBox用户名",
 	"IP address": "IP地址",
+	"Ignore SSL errors": "忽略 SSL 错误",
 	"Password": "密码",
 	"Username": "用户名",
 	"advanced_settings": "高级设置",

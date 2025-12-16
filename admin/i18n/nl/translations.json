@@ -1,6 +1,7 @@
 {
 	"Advanced options": "Geavanceerde mogelijkheden",
 	"Connection details": "Verbindingsgegevens",
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Bepaalt of SSL-fouten moeten worden genegeerd bij communicatie met de gateway. Schakel dit alleen in als u weet wat het betekent.",
 	"Enter the CSymbol specific for your gateway": "Voer het CSymbol in dat specifiek is voor uw gateway",
 	"Enter the SHAPIVersion specific for your gateway": "Voer de SHAPIV-versie in die specifiek is voor uw gateway",
 	"Enter the SHCVersion specific for your gateway": "Voer de SHCVersion in die specifiek is voor uw gateway",
@@ -8,6 +9,7 @@
 	"Enter your SmartFriendsBox password": "Voer uw SmartFriendsBox-wachtwoord in",
 	"Enter your SmartFriendsBox username": "Voer uw SmartFriendsBox-gebruikersnaam in",
 	"IP address": "IP adres",
+	"Ignore SSL errors": "Negeer SSL-fouten",
 	"Password": "Wachtwoord",
 	"Username": "Gebruikersnaam",
 	"advanced_settings": "Geavanceerde instellingen",

@@ -43,8 +43,14 @@
 			"zh-cn": "聪明的朋友",
 			"uk": "розумні друзі"
 		},
-		"authors": ["Black-Thunder <glwars@aol.de>"],
-		"keywords": ["home automation", "smartfriends", "schellenberg"],
+		"authors": [
+			"Black-Thunder <glwars@aol.de>"
+		],
+		"keywords": [
+			"home automation",
+			"smartfriends",
+			"schellenberg"
+		],
 		"licenseInformation": {
 			"license": "MIT",
 			"type": "free"
@@ -75,8 +81,12 @@
 		],
 		"tier": 2
 	},
-	"encryptedNative": ["smartFriendsPassword"],
-	"protectedNative": ["smartFriendsPassword"],
+	"encryptedNative": [
+		"smartFriendsPassword"
+	],
+	"protectedNative": [
+		"smartFriendsPassword"
+	],
 	"native": {
 		"smartFriendsPort": 4300,
 		"smartFriendsIP": "",
@@ -84,7 +94,8 @@
 		"smartFriendsPassword": "",
 		"smartFriendsCSymbol": "D19033i",
 		"smartFriendsShcVersion": "3.7.4",
-		"smartFriendsShApiVersion": "3.4"
+		"smartFriendsShApiVersion": "3.4",
+		"ignoreSslErrors": false
 	},
 	"objects": [],
 	"instanceObjects": []

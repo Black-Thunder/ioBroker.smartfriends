@@ -1,6 +1,7 @@
 {
 	"Advanced options": "Options avancées",
 	"Connection details": "Détails de connexion",
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Définit s'il faut ignorer les erreurs SSL lors de la communication avec la passerelle. N'activez que si vous savez ce que cela signifie.",
 	"Enter the CSymbol specific for your gateway": "Entrez le CSymbol spécifique à votre passerelle",
 	"Enter the SHAPIVersion specific for your gateway": "Entrez la SHAPIVersion spécifique à votre passerelle",
 	"Enter the SHCVersion specific for your gateway": "Entrez la SHCVersion spécifique à votre passerelle",
@@ -8,6 +9,7 @@
 	"Enter your SmartFriendsBox password": "Entrez votre mot de passe SmartFriendsBox",
 	"Enter your SmartFriendsBox username": "Entrez votre nom d'utilisateur SmartFriendsBox",
 	"IP address": "adresse IP",
+	"Ignore SSL errors": "Ignorer les erreurs SSL",
 	"Password": "Mot de passe",
 	"Username": "Nom d'utilisateur",
 	"advanced_settings": "Réglages avancés",

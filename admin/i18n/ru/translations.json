@@ -1,6 +1,7 @@
 {
 	"Advanced options": "Расширенные настройки",
 	"Connection details": "Детали подключения",
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Определяет, игнорировать ли ошибки SSL при обмене данными со шлюзом. Включайте только в том случае, если вы знаете, что это значит.",
 	"Enter the CSymbol specific for your gateway": "Введите CSymbol, специфичный для вашего шлюза",
 	"Enter the SHAPIVersion specific for your gateway": "Введите SHAPIVersion для вашего шлюза",
 	"Enter the SHCVersion specific for your gateway": "Введите SHCVersion для вашего шлюза",
@@ -8,6 +9,7 @@
 	"Enter your SmartFriendsBox password": "Введите свой пароль SmartFriendsBox",
 	"Enter your SmartFriendsBox username": "Введите свое имя пользователя SmartFriendsBox",
 	"IP address": "айпи адрес",
+	"Ignore SSL errors": "Игнорировать ошибки SSL",
 	"Password": "пароль",
 	"Username": "Имя пользователя",
 	"advanced_settings": "Расширенные настройки",
