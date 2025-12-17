@@ -70,7 +70,7 @@ class Smartfriends extends utils.Adapter {
 		this.log.debug("Checking adapter settings...");
 
 		if (this.config.ignoreSslErrors) {
-			this.log.info("SSL errors are ignored when communicating with the gateway. This is potentially insecure!");
+			this.log.warn("SSL errors are ignored when communicating with the gateway. This is potentially insecure!");
 		}
 
 		ConfigValidator.validate(this.config);
