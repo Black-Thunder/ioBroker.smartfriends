@@ -15,7 +15,7 @@ Aktuell werden folgende Gerätetypen unterstützt:
 - Funk-Markisenantrieb (Typ ${Awning})
 - Rollladenantrieb (Typ "${RollingShutter}")
 
-Sollten bisher nicht untertütze Gerätetypen auftreten, so wird eine Warnung im Log ausgegeben und das Gerät ignoriert. Bitte diese Information mit einem vollständigen Debug-Log in einem neuen Issue mitteilen.
+Sollten bisher nicht unterstützte Gerätetypen verwendet werden, so werden die entsprechenden Geräte ignoriert. Bitte in diesem Fall einen Issue mit einem vollständigen Debug-Log anlegen, damit der Gerätetyp aufgenommen werden kann.
 
 ## Konfiguration
 

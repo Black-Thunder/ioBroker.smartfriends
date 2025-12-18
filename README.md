@@ -14,13 +14,18 @@
 
 ## smartfriends adapter for ioBroker
 
-This adapter integrates the SmartFriends-ecosystem directly using the gateway (SmartFriendsBox) into ioBroker.
+This adapter enables a direct **local integration** of the **SmartFriends Box** (e.g. Smart Friends Box by Schellenberg, ABUS, Paulmann, STEINEL, etc.) into ioBroker – **without using the official cloud**.
 
-Documentation:
+The adapter establishes a direct connection to the gateway to control and query devices locally.
 
-- [Forum thread](https://forum.iobroker.net/topic/83202)
+## Documentation:
+
 - [English description](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/en/smartfriends.md)
 - [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.smartfriends/tree/master/docs/de/smartfriends.md)
+
+## Discussion:
+
+- [ioBroker Forum](https://forum.iobroker.net/topic/83202)
 
 ## Changelog
 
@@ -29,7 +34,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
-### 1.0.0 (2025-12-12)
+### 1.0.0 (XXXX-XX-XX)
 
 - (Black-Thunder) initial release
 

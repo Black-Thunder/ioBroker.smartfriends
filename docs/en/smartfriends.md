@@ -15,7 +15,7 @@ Currently, the following device types are supported:
 - Wireless awning drive (Type ${Awning})
 - Roller shutter drive (Type "${RollingShutter}")
 
-If unsupported device types appear, a warning will be logged and the device ignored. Please report this with a full debug log in a new issue.
+If device types that are not yet supported are used, the corresponding devices will be ignored. In this case, please create an issue with a complete debug log so that the device type can be added.
 
 ## Configuration
 
