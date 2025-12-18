@@ -34,7 +34,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	### __WORK IN PROGRESS__
 -->
 
-### 1.0.0 (XXXX-XX-XX)
+### 1.0.0 (2025-12-18)
 
 - (Black-Thunder) initial release
 
