@@ -25,32 +25,26 @@
 			"nl": "SmartFriends",
 			"fr": "SmartFriends",
 			"it": "SmartFriends",
-			"es": "Amigos inteligentes",
+			"es": "SmartFriends",
 			"pl": "SmartFriends",
 			"zh-cn": "SmartFriends",
 			"uk": "SmartFriends"
 		},
 		"desc": {
-			"en": "smartfriends",
-			"de": "Smartfriends",
-			"ru": "умные друзья",
-			"pt": "amigos inteligentes",
-			"nl": "slimme vrienden",
-			"fr": "amis intelligents",
-			"it": "amici intelligenti",
-			"es": "amigos inteligentes",
-			"pl": "smartfriends",
-			"zh-cn": "聪明的朋友",
-			"uk": "розумні друзі"
+			"en": "Local control of SmartFriends gateways and connected devices without cloud access.",
+			"de": "Lokale Steuerung von SmartFriends-Gateways und angeschlossenen Geräten ohne Cloud-Anbindung.",
+			"ru": "Локальное управление шлюзами SmartFriends и подключёнными устройствами без облака.",
+			"pt": "Controle local de gateways SmartFriends e dispositivos conectados sem uso de nuvem.",
+			"nl": "Lokale aansturing van SmartFriends-gateways en aangesloten apparaten zonder cloud.",
+			"fr": "Contrôle local des passerelles SmartFriends et des appareils connectés sans cloud.",
+			"it": "Controllo locale dei gateway SmartFriends e dei dispositivi collegati senza cloud.",
+			"es": "Control local de gateways SmartFriends y dispositivos conectados sin nube.",
+			"pl": "Lokalne sterowanie bramkami SmartFriends i podłączonymi urządzeniami bez chmury.",
+			"zh-cn": "无需云服务即可本地控制 SmartFriends 网关及其连接的设备。",
+			"uk": "Локальне керування шлюзами SmartFriends і підключеними пристроями без хмари."
 		},
-		"authors": [
-			"Black-Thunder <glwars@aol.de>"
-		],
-		"keywords": [
-			"home automation",
-			"smartfriends",
-			"schellenberg"
-		],
+		"authors": ["Black-Thunder <glwars@aol.de>"],
+		"keywords": ["home automation", "smartfriends", "schellenberg"],
 		"licenseInformation": {
 			"license": "MIT",
 			"type": "free"
@@ -81,12 +75,8 @@
 		],
 		"tier": 2
 	},
-	"encryptedNative": [
-		"smartFriendsPassword"
-	],
-	"protectedNative": [
-		"smartFriendsPassword"
-	],
+	"encryptedNative": ["smartFriendsPassword"],
+	"protectedNative": ["smartFriendsPassword"],
 	"native": {
 		"smartFriendsPort": 4300,
 		"smartFriendsIP": "",
