@@ -34,6 +34,11 @@ The adapter establishes a direct connection to the gateway to control and query 
 	### __WORK IN PROGRESS__
 -->
 
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) Increased robustness when communicating with the gateway
+- (Black-Thunder) Added new option to ignore certificate errors
+
 ### 1.0.0 (2025-12-18)
 
 - (Black-Thunder) initial release
