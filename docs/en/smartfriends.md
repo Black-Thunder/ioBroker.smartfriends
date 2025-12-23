@@ -10,12 +10,10 @@ To use this adapter correctly, the following preparations must be made:
 
 ### Supported devices
 
-Currently, the following device types are supported:
+The adapter automatically creates the appropriate states based on the data reported by the gateway.
+In principle, all device types should be supported.
 
-- Wireless awning drive (Type ${Awning})
-- Roller shutter drive (Type "${RollingShutter}")
-
-If device types that are not yet supported are used, the corresponding devices will be ignored. In this case, please create an issue with a complete debug log so that the device type can be added.
+If any states are missing or incorrect, please open an issue and include a full debug log.
 
 ## Configuration
 
@@ -36,7 +34,8 @@ Additionally, ignoring SSL errors can be enabled here. This should only be used 
 
 ## Objects
 
-Once the adapter instance (X) is successfully (=green) started, devices and data from the gateway are retrieved. For each supported device (Y), a separate object node is created.
+Once the adapter instance (X) is successfully (=green) started, devices and data from the gateway are retrieved.
+For each supported device (Y), a separate object node is created. On the top level, all related functions are grouped under a master ID. Below that, child devices (Z1...N) are created per function.
 
 ### smartfriends.X.info
 
@@ -51,7 +50,7 @@ Once the adapter instance (X) is successfully (=green) started, devices and data
 | hardwareName |  X   |   -   | Name of the used gateway        |
 | macAddress   |  X   |   -   | MAC address of the used gateway |
 
-### smartfriends.X.device.Y.info
+### smartfriends.X.device.Y.Z1...N.info
 
 | ID          | read | write | comment                         |
 | ----------- | :--: | :---: | ------------------------------- |
@@ -59,22 +58,23 @@ Once the adapter instance (X) is successfully (=green) started, devices and data
 | deviceName  |  X   |   -   | User-defined name of the device |
 | typeClient  |  X   |   -   | Device type                     |
 
-### smartfriends.X.device.Y.control
+### smartfriends.X.device.Y.Z1...N.control
 
 These states depend on the device type.
 
-#### Wireless Awning Drive
+#### Control states (boolean)
 
-| ID       | read | write | comment            |
-| -------- | :--: | :---: | ------------------ |
-| moveDown |  -   |   X   | Extend the awning  |
-| moveStop |  -   |   X   | Stop the drive     |
-| moveUp   |  -   |   X   | Retract the awning |
+| ID     | readable | writable | Note                    |
+| ------ | :------: | :------: | ----------------------- |
+| on     |    -     |    X     | Turn device on          |
+| off    |    -     |    X     | Turn device off         |
+| stop   |    -     |    X     | Stop the device         |
+| up     |    -     |    X     | Move device up          |
+| down   |    -     |    X     | Move device down        |
+| toggle |    -     |    X     | Invert the device state |
 
-#### Roller Shutter Drive
+#### Control states (number)
 
-| ID       | read | write | comment           |
-| -------- | :--: | :---: | ----------------- |
-| close    |  -   |   X   | Close the shutter |
-| moveStop |  -   |   X   | Stop the drive    |
-| open     |  -   |   X   | Open the shutter  |
+| ID       | readable | writable | Note                                |
+| -------- | :------: | :------: | ----------------------------------- |
+| position |    X     |    X     | Move device to position N (0...100) |
