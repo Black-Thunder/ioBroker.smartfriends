@@ -8,7 +8,7 @@
 const utils = require("@iobroker/adapter-core");
 const schellenbergBridge = require("./lib/SchellenbergBridge");
 const commonDefines = require("./lib/helpers/CommonDefines");
-const DeviceManager = require("./lib/DeviceManager");
+const DeviceManager = require("./lib/devices/DeviceManager");
 
 let SchellenbergBridge = null;
 
