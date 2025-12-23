@@ -1,115 +1,118 @@
 {
-  "common": {
-    "name": "smartfriends",
-    "version": "1.0.1",
-    "news": {
-      "1.0.1": {
-        "en": "Increased robustness when communicating with the gateway\nAdded new option to ignore certificate errors",
-        "de": "Erhöhte Robustheit bei der Kommunikation mit dem Gateway\nNeue Option hinzugefügt, um Zertifikatsfehler zu ignorieren",
-        "ru": "Повышенная надежность при общении с шлюзом\nДобавлена новая возможность игнорировать ошибки сертификата",
-        "pt": "Maior robustez ao se comunicar com o gateway\nAdicionada nova opção para ignorar erros de certificado",
-        "nl": "Verhoogde robuustheid bij het communiceren met de gateway\nNieuwe optie toegevoegd om certificaatfouten te negeren",
-        "fr": "Une robustesse accrue lors de la communication avec la passerelle\nAjout d'une nouvelle option pour ignorer les erreurs de certificat",
-        "it": "Maggiore robustezza quando si comunica con il gateway\nAggiunta nuova opzione per ignorare gli errori del certificato",
-        "es": "Mayor robustez al comunicarse con la puerta de entrada\nNueva opción para ignorar errores de certificado",
-        "pl": "Większa odporność podczas komunikacji z bramą\nDodano nową opcję do ignorowania błędów certyfikatu",
-        "uk": "Підвищена надійність при спілкуванні з шлюзом\nДодано новий варіант ігнорувати помилки сертифіката",
-        "zh-cn": "与网关沟通时的强度提高\n添加新选项以忽略证书错误"
-      },
-      "1.0.0": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版",
-        "uk": "початковий випуск"
-      }
-    },
-    "titleLang": {
-      "en": "SmartFriends",
-      "de": "SmartFriends",
-      "ru": "SmartFriends",
-      "pt": "SmartFriends",
-      "nl": "SmartFriends",
-      "fr": "SmartFriends",
-      "it": "SmartFriends",
-      "es": "SmartFriends",
-      "pl": "SmartFriends",
-      "zh-cn": "SmartFriends",
-      "uk": "SmartFriends"
-    },
-    "desc": {
-      "en": "Local control of SmartFriends gateways and connected devices without cloud access.",
-      "de": "Lokale Steuerung von SmartFriends-Gateways und angeschlossenen Geräten ohne Cloud-Anbindung.",
-      "ru": "Локальное управление шлюзами SmartFriends и подключёнными устройствами без облака.",
-      "pt": "Controle local de gateways SmartFriends e dispositivos conectados sem uso de nuvem.",
-      "nl": "Lokale aansturing van SmartFriends-gateways en aangesloten apparaten zonder cloud.",
-      "fr": "Contrôle local des passerelles SmartFriends et des appareils connectés sans cloud.",
-      "it": "Controllo locale dei gateway SmartFriends e dei dispositivi collegati senza cloud.",
-      "es": "Control local de gateways SmartFriends y dispositivos conectados sin nube.",
-      "pl": "Lokalne sterowanie bramkami SmartFriends i podłączonymi urządzeniami bez chmury.",
-      "zh-cn": "无需云服务即可本地控制 SmartFriends 网关及其连接的设备。",
-      "uk": "Локальне керування шлюзами SmartFriends і підключеними пристроями без хмари."
-    },
-    "authors": [
-      "Black-Thunder <glwars@aol.de>"
-    ],
-    "keywords": [
-      "home automation",
-      "smartfriends",
-      "schellenberg"
-    ],
-    "licenseInformation": {
-      "license": "MIT",
-      "type": "free"
-    },
-    "platform": "Javascript/Node.js",
-    "icon": "smartfriends.png",
-    "enabled": false,
-    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
-    "readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "iot-systems",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=6.0.11"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.17"
-      }
-    ],
-    "tier": 2
-  },
-  "encryptedNative": [
-    "smartFriendsPassword"
-  ],
-  "protectedNative": [
-    "smartFriendsPassword"
-  ],
-  "native": {
-    "smartFriendsPort": 4300,
-    "smartFriendsIP": "",
-    "smartFriendsUsername": "",
-    "smartFriendsPassword": "",
-    "smartFriendsCSymbol": "D19033i",
-    "smartFriendsShcVersion": "3.7.4",
-    "smartFriendsShApiVersion": "3.4",
-    "ignoreSslErrors": false
-  },
-  "objects": [],
-  "instanceObjects": []
+	"common": {
+		"name": "smartfriends",
+		"version": "1.1.0-alpha.0",
+		"news": {
+			"1.1.0-alpha.0": {
+				"en": "Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID",
+				"de": "Überarbeitete Geräteverwaltung: dynamische Zustände, entfernte Typ-Whitelist, gruppierte Geräte unter Master-ID",
+				"ru": "Рефакторированная обработка устройств: динамические состояния, удаленный белый список типов, сгруппированные устройства под идентификатором Master ID",
+				"pt": "Manipulação do dispositivo refatorado: estados dinâmicos, lista branca do tipo removido, dispositivos agrupados sob ID mestre",
+				"nl": "Refactored device handling: dynamische toestanden, verwijderd type whitelist, gegroepeerde apparaten onder master ID",
+				"fr": "Manipulation de l'appareil refacturé : états dynamiques, liste blanche de type enlevé, dispositifs groupés sous Master ID",
+				"it": "Movimentazione del dispositivo refattore: stati dinamici, tipo rimosso whitelist, dispositivi raggruppati sotto master ID",
+				"es": "Manejo de dispositivo refactorizado: estados dinámicos, lista blanca de tipo eliminado, dispositivos agrupados bajo ID maestro",
+				"pl": "Przekształcona obsługa urządzenia: stany dynamiczne, usunięty biały typ, zgrupowane urządzenia pod master ID",
+				"uk": "Рефакторний пристрій обробки: динамічні стани, видалений тип білий список, вбудовані пристрої під магістр ID",
+				"zh-cn": "重构设备处理: 动态状态, 删除类型白名单, 主 ID 下分组设备"
+			},
+			"1.0.1": {
+				"en": "Increased robustness when communicating with the gateway\nAdded new option to ignore certificate errors",
+				"de": "Erhöhte Robustheit bei der Kommunikation mit dem Gateway\nNeue Option hinzugefügt, um Zertifikatsfehler zu ignorieren",
+				"ru": "Повышенная надежность при общении с шлюзом\nДобавлена новая возможность игнорировать ошибки сертификата",
+				"pt": "Maior robustez ao se comunicar com o gateway\nAdicionada nova opção para ignorar erros de certificado",
+				"nl": "Verhoogde robuustheid bij het communiceren met de gateway\nNieuwe optie toegevoegd om certificaatfouten te negeren",
+				"fr": "Une robustesse accrue lors de la communication avec la passerelle\nAjout d'une nouvelle option pour ignorer les erreurs de certificat",
+				"it": "Maggiore robustezza quando si comunica con il gateway\nAggiunta nuova opzione per ignorare gli errori del certificato",
+				"es": "Mayor robustez al comunicarse con la puerta de entrada\nNueva opción para ignorar errores de certificado",
+				"pl": "Większa odporność podczas komunikacji z bramą\nDodano nową opcję do ignorowania błędów certyfikatu",
+				"uk": "Підвищена надійність при спілкуванні з шлюзом\nДодано новий варіант ігнорувати помилки сертифіката",
+				"zh-cn": "与网关沟通时的强度提高\n添加新选项以忽略证书错误"
+			},
+			"1.0.0": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版",
+				"uk": "початковий випуск"
+			}
+		},
+		"titleLang": {
+			"en": "SmartFriends",
+			"de": "SmartFriends",
+			"ru": "SmartFriends",
+			"pt": "SmartFriends",
+			"nl": "SmartFriends",
+			"fr": "SmartFriends",
+			"it": "SmartFriends",
+			"es": "SmartFriends",
+			"pl": "SmartFriends",
+			"zh-cn": "SmartFriends",
+			"uk": "SmartFriends"
+		},
+		"desc": {
+			"en": "Local control of SmartFriends gateways and connected devices without cloud access.",
+			"de": "Lokale Steuerung von SmartFriends-Gateways und angeschlossenen Geräten ohne Cloud-Anbindung.",
+			"ru": "Локальное управление шлюзами SmartFriends и подключёнными устройствами без облака.",
+			"pt": "Controle local de gateways SmartFriends e dispositivos conectados sem uso de nuvem.",
+			"nl": "Lokale aansturing van SmartFriends-gateways en aangesloten apparaten zonder cloud.",
+			"fr": "Contrôle local des passerelles SmartFriends et des appareils connectés sans cloud.",
+			"it": "Controllo locale dei gateway SmartFriends e dei dispositivi collegati senza cloud.",
+			"es": "Control local de gateways SmartFriends y dispositivos conectados sin nube.",
+			"pl": "Lokalne sterowanie bramkami SmartFriends i podłączonymi urządzeniami bez chmury.",
+			"zh-cn": "无需云服务即可本地控制 SmartFriends 网关及其连接的设备。",
+			"uk": "Локальне керування шлюзами SmartFriends і підключеними пристроями без хмари."
+		},
+		"authors": ["Black-Thunder <glwars@aol.de>"],
+		"keywords": ["home automation", "smartfriends", "schellenberg"],
+		"licenseInformation": {
+			"license": "MIT",
+			"type": "free"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "smartfriends.png",
+		"enabled": false,
+		"extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
+		"readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "iot-systems",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.6.17"
+			}
+		],
+		"tier": 2
+	},
+	"encryptedNative": ["smartFriendsPassword"],
+	"protectedNative": ["smartFriendsPassword"],
+	"native": {
+		"smartFriendsPort": 4300,
+		"smartFriendsIP": "",
+		"smartFriendsUsername": "",
+		"smartFriendsPassword": "",
+		"smartFriendsCSymbol": "D19033i",
+		"smartFriendsShcVersion": "3.7.4",
+		"smartFriendsShApiVersion": "3.4",
+		"ignoreSslErrors": false
+	},
+	"objects": [],
+	"instanceObjects": []
 }
