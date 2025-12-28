@@ -37,6 +37,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 ### **WORK IN PROGRESS**
 
 - (Black-Thunder) Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID
+- (Black-Thunder) Handle device value updates now correctly
 
 ### 1.0.1 (2025-12-20)
 
