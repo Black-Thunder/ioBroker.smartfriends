@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.1.0-alpha.1",
+    "version": "1.1.0",
     "news": {
+      "1.1.0": {
+        "en": "Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID\nHandle device value updates now correctly",
+        "de": "Refactored Device Handling: dynamische Zustände, entfernte Typ Whitelist, gruppierte Geräte unter Master ID\nGerätewert-Updates jetzt korrekt ausschalten",
+        "ru": "Рефакторированная обработка устройств: динамические состояния, удаленный белый список типов, сгруппированные устройства под идентификатором Master ID\nОбновления стоимости устройства теперь правильно",
+        "pt": "Manipulação do dispositivo refatorado: estados dinâmicos, lista branca do tipo removido, dispositivos agrupados sob ID mestre\nGerenciar as atualizações de valor do dispositivo agora corretamente",
+        "nl": "Refactored device handling: dynamische toestanden, verwijderd type whitelist, gegroepeerde apparaten onder master ID\nHandle apparaat waarde updates nu correct",
+        "fr": "Manipulation de l'appareil refacturé : états dynamiques, liste blanche de type enlevé, dispositifs groupés sous Master ID\nGérer les mises à jour de la valeur du périphérique maintenant correctement",
+        "it": "Movimentazione del dispositivo refattore: stati dinamici, tipo rimosso whitelist, dispositivi raggruppati sotto master ID\nMantenere gli aggiornamenti del valore del dispositivo ora correttamente",
+        "es": "Manejo de dispositivo refactorizado: estados dinámicos, lista blanca de tipo eliminado, dispositivos agrupados bajo ID maestro\nActualizaciones de valor del dispositivo manual ahora correctamente",
+        "pl": "Przekształcona obsługa urządzenia: stany dynamiczne, usunięty biały typ, zgrupowane urządzenia pod master ID\nUchwyt aktualizacji wartości urządzenia teraz poprawnie",
+        "uk": "Рефакторний пристрій обробки: динамічні стани, видалений тип білий список, вбудовані пристрої під магістр ID\nОновлення значення ручного пристрою тепер правильно",
+        "zh-cn": "重构设备处理: 动态状态, 删除类型白名单, 主 ID 下分组设备\n现在正确处理设备值更新"
+      },
       "1.1.0-alpha.1": {
         "en": "Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID\nHandle device value updates now correctly",
         "de": "Refactored Device Handling: dynamische Zustände, entfernte Typ Whitelist, gruppierte Geräte unter Master ID\nGerätewert-Updates jetzt korrekt ausschalten",
