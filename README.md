@@ -33,7 +33,8 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### 1.1.0-alpha.1 (2025-12-28)
+
+### **WORK IN PROGRESS**
 
 - (Black-Thunder) Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID
 - (Black-Thunder) Handle device value updates now correctly
