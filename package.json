@@ -23,8 +23,7 @@
     "node": ">= 20"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.3.2",
-    "base-64": "^1.0.0"
+    "@iobroker/adapter-core": "^3.3.2"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.0.0",
