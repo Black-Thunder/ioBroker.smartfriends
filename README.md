@@ -34,6 +34,10 @@ The adapter establishes a direct connection to the gateway to control and query 
 	### __WORK IN PROGRESS__
 -->
 
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) Refactored device handling and added support for further device types
+
 ### 1.1.0 (2025-12-28)
 
 - (Black-Thunder) Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID
