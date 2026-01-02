@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.1.0",
+    "version": "1.2.0-alpha.0",
     "news": {
+      "1.2.0-alpha.0": {
+        "en": "Refactored device handling and added support for further device types",
+        "de": "Refactored Device Handling und zusätzliche Unterstützung für weitere Gerätetypen",
+        "ru": "Рефакторированная обработка устройств и дополнительная поддержка для других типов устройств",
+        "pt": "Manipulação do dispositivo refatorizado e suporte adicional para outros tipos de dispositivo",
+        "nl": "Refactored device handling en toegevoegde ondersteuning voor andere apparaattypes",
+        "fr": "Manipulation de l'appareil refactoré et support supplémentaire pour d'autres types d'appareil",
+        "it": "Gestione del dispositivo e supporto aggiunto per ulteriori tipi di dispositivo",
+        "es": "Manejo de dispositivo refactorizado y soporte añadido para nuevos tipos de dispositivos",
+        "pl": "Zmieniona obsługa urządzenia i dodana obsługa dla innych typów urządzeń",
+        "uk": "Рефакторний пристрій обробки та додано підтримку для подальших типів пристроїв",
+        "zh-cn": "对设备类型进行重构处理并添加支持"
+      },
       "1.1.0": {
         "en": "Refactored device handling: dynamic states, removed type whitelist, grouped devices under master ID\nHandle device value updates now correctly",
         "de": "Refactored Device Handling: dynamische Zustände, entfernte Typ Whitelist, gruppierte Geräte unter Master ID\nGerätewert-Updates jetzt korrekt ausschalten",
