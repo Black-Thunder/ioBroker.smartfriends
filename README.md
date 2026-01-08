@@ -33,8 +33,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.2.0-alpha.1 (2026-01-08)
 
 - (Black-Thunder) Timeout for initial device request was increased
 - (Black-Thunder) Devices without defined device type are ignored

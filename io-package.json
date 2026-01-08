@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.2.0-alpha.0",
+    "version": "1.2.0-alpha.1",
     "news": {
+      "1.2.0-alpha.1": {
+        "en": "Timeout for initial device request was increased\nDevices without defined device type are ignored",
+        "de": "Timeout für erste Geräteanfrage wurde erhöht\nGeräte ohne definierten Gerätetyp werden ignoriert",
+        "ru": "Время ожидания первоначального запроса устройства было увеличено\nУстройства без определенного типа устройства игнорируются",
+        "pt": "O tempo limite para a solicitação inicial do dispositivo foi aumentado\nOs dispositivos sem tipo de dispositivo definido são ignorados",
+        "nl": "Tijdslimiet voor het eerste apparaatverzoek werd verhoogd\nApparaten zonder gedefinieerd apparaattype worden genegeerd",
+        "fr": "Le délai pour la demande initiale d'appareil a été augmenté\nLes dispositifs sans type défini sont ignorés",
+        "it": "Timeout per la richiesta iniziale del dispositivo è stato aumentato\nI dispositivi senza tipo di dispositivo definito vengono ignorati",
+        "es": "Se aumentó el tiempo para la solicitud inicial del dispositivo\nLos dispositivos sin tipo de dispositivo definido son ignorados",
+        "pl": "Zwiększono czas na początkowe żądanie urządzenia\nUrządzenia bez określonego typu urządzenia są ignorowane",
+        "uk": "Підвищено запит на початковий пристрій\nПристрої без визначеного типу пристрою ігноруються",
+        "zh-cn": "初始设备请求的超时增加\n没有定义设备类型的设备会被忽略"
+      },
       "1.2.0-alpha.0": {
         "en": "Refactored device handling and added support for further device types",
         "de": "Refactored Device Handling und zusätzliche Unterstützung für weitere Gerätetypen",
