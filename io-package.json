@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.2.0",
+    "version": "1.3.0-alpha.0",
     "news": {
+      "1.3.0-alpha.0": {
+        "en": "Support for further device types was added\nUmlauts in device names are now correctly parsed",
+        "de": "Unterstützung für weitere Gerätetypen wurde hinzugefügt\nUmlaute in Gerätenamen werden nun korrekt dargestellt",
+        "ru": "Добавлена поддержка дополнительных типов устройств\nУмлауты в названиях устройств теперь правильно разобраны",
+        "pt": "Foi adicionado suporte para outros tipos de dispositivos\nUmlauts em nomes de dispositivos agora são corretamente analisados",
+        "nl": "Ondersteuning voor andere apparaattypes is toegevoegd\nUmlauts in apparaatnamen zijn nu correct ontleed",
+        "fr": "Un soutien pour d'autres types d'appareils a été ajouté\nUmlauts dans les noms de périphériques sont maintenant correctement analysés",
+        "it": "È stato aggiunto il supporto per ulteriori tipi di dispositivo\nI nomi dei dispositivi sono ora correttamente analizzati",
+        "es": "Se agregó soporte para nuevos tipos de dispositivos\nUmlauts en los nombres de los dispositivos ahora se analizan correctamente",
+        "pl": "Dodano wsparcie dla innych typów urządzeń\nKlauty w nazwach urządzeń są teraz poprawnie przefiltrowane",
+        "uk": "Додана підтримка подальших типів пристроїв\nУмлаути в назвах пристроїв тепер правильно припаровані",
+        "zh-cn": "添加了对更多设备类型的支持\n设备名称中的 Umlaut 现已正确解析"
+      },
       "1.2.0": {
         "en": "Timeout for initial device request was increased\nDevices without defined device type are ignored\nRefactored device handling and added support for further device types",
         "de": "Timeout für erste Geräteanfrage wurde erhöht\nGeräte ohne definierten Gerätetyp werden ignoriert\nRefactored Device Handling und zusätzliche Unterstützung für weitere Gerätetypen",
@@ -80,19 +93,6 @@
         "pl": "Przekształcona obsługa urządzenia: stany dynamiczne, usunięty biały typ, zgrupowane urządzenia pod master ID",
         "uk": "Рефакторний пристрій обробки: динамічні стани, видалений тип білий список, вбудовані пристрої під магістр ID",
         "zh-cn": "重构设备处理: 动态状态, 删除类型白名单, 主 ID 下分组设备"
-      },
-      "1.0.1": {
-        "en": "Increased robustness when communicating with the gateway\nAdded new option to ignore certificate errors",
-        "de": "Erhöhte Robustheit bei der Kommunikation mit dem Gateway\nNeue Option hinzugefügt, um Zertifikatsfehler zu ignorieren",
-        "ru": "Повышенная надежность при общении с шлюзом\nДобавлена новая возможность игнорировать ошибки сертификата",
-        "pt": "Maior robustez ao se comunicar com o gateway\nAdicionada nova opção para ignorar erros de certificado",
-        "nl": "Verhoogde robuustheid bij het communiceren met de gateway\nNieuwe optie toegevoegd om certificaatfouten te negeren",
-        "fr": "Une robustesse accrue lors de la communication avec la passerelle\nAjout d'une nouvelle option pour ignorer les erreurs de certificat",
-        "it": "Maggiore robustezza quando si comunica con il gateway\nAggiunta nuova opzione per ignorare gli errori del certificato",
-        "es": "Mayor robustez al comunicarse con la puerta de entrada\nNueva opción para ignorar errores de certificado",
-        "pl": "Większa odporność podczas komunikacji z bramą\nDodano nową opcję do ignorowania błędów certyfikatu",
-        "uk": "Підвищена надійність при спілкуванні з шлюзом\nДодано новий варіант ігнорувати помилки сертифіката",
-        "zh-cn": "与网关沟通时的强度提高\n添加新选项以忽略证书错误"
       }
     },
     "titleLang": {
