@@ -34,7 +34,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	### __WORK IN PROGRESS__
 -->
 
-## **WORK IN PROGRESS**
+### **WORK IN PROGRESS**
 
 - (Black-Thunder) Dependencies were updated
 
