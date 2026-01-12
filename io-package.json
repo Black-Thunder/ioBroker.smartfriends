@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "news": {
+      "1.3.1": {
+        "en": "Dependencies were updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Зависимости обновлялись",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden werden bijgewerkt",
+        "fr": "Mise à jour des dépendances",
+        "it": "Le dipendenze sono state aggiornate",
+        "es": "Se actualizaron las dependencias",
+        "pl": "Zaktualizowano uzależnienia",
+        "uk": "Залежність оновлено",
+        "zh-cn": "附属关系得到更新"
+      },
       "1.3.0": {
         "en": "Support for further device types was added\nUmlauts in device names are now correctly parsed",
         "de": "Unterstützung für weitere Gerätetypen wurde hinzugefügt\nUmlaute in Gerätenamen werden nun korrekt dargestellt",
@@ -42,7 +55,7 @@
         "uk": "Рефакторний пристрій обробки: динамічні стани, видалений тип білий список, вбудовані пристрої під магістр ID\nОновлення значення ручного пристрою тепер правильно",
         "zh-cn": "重构设备处理: 动态状态, 删除类型白名单, 主 ID 下分组设备\n现在正确处理设备值更新"
       },
-	  "1.0.1": {
+      "1.0.1": {
         "en": "Increased robustness when communicating with the gateway\nAdded new option to ignore certificate errors",
         "de": "Robustheit der Kommunikation mit dem Gateway erhöht\nNeue Option hinzugefügt, um Zertifikatsfehler zu ignorieren",
         "ru": "Повышенная надежность при общении с шлюзом\nДобавлена новая возможность игнорировать ошибки сертификата",
