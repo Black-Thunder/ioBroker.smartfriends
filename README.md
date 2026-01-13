@@ -33,6 +33,11 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) Creation of adapter objects was fixed
+
 ### 1.3.1 (2026-01-12)
 
 - (Black-Thunder) Dependencies were updated

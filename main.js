@@ -146,6 +146,15 @@ class Smartfriends extends utils.Adapter {
 				native: {},
 			});
 
+			// devices
+			await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Devices, {
+				type: "folder",
+				common: {
+					name: "Devices",
+				},
+				native: {},
+			});
+
 			this.setAdapterConnectionState(false);
 		} catch (error) {
 			this.log.error(`Failed to initialize objects: ${error.message}`);
