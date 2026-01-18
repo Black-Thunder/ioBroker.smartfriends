@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "news": {
+      "1.3.3": {
+        "en": "Special characters in device definitions (e.g. \"<>\") are now correctly handled\nBoolean values in device definitions are now correctly handled\nNumeric sensor values are no longer rounded",
+        "de": "Sonderzeichen in Gerätedefinitionen (z.B. \"<>\") werden nun korrekt verarbeitet\nBoolesche Werte in Gerätedefinitionen werden nun korrekt verarbeitet\nNumerische Sensorwerte werden nicht mehr gerundet",
+        "ru": "Специальные символы в определениях устройств (например, \"<>\") теперь правильно обработаны\nБулевы значения в определениях устройств теперь правильно обрабатываются\nЧисленные значения датчиков больше не округляются",
+        "pt": "Os caracteres especiais nas definições do dispositivo (por exemplo, \"<>\") são agora correctamente manuseados\nOs valores booleanos nas definições do dispositivo são agora correctamente manuseados\nOs valores dos sensores numéricos já não são arredondados",
+        "nl": "Speciale tekens in apparaatdefinities (bijv. \"<>\") worden nu correct behandeld\nBooleaanse waarden in apparaatdefinities worden nu correct behandeld\nNumerieke sensorwaarden zijn niet meer afgerond",
+        "fr": "Les caractères spéciaux dans les définitions de l'appareil (p. ex. «<>») sont maintenant correctement traités\nLes valeurs booléennes dans les définitions des appareils sont maintenant correctement gérées\nLes valeurs des capteurs numériques ne sont plus arrondies",
+        "it": "I caratteri speciali nelle definizioni dei dispositivi (ad esempio \" <>\") sono ora gestiti correttamente\nI valori booleani nelle definizioni dei dispositivi sono ora gestiti correttamente\nI valori del sensore numerico non sono più arrotondati",
+        "es": "Los caracteres especiales en las definiciones de dispositivos (por ejemplo, \"directo\") se manejan correctamente\nLos valores booleanos en las definiciones de dispositivos ahora se manejan correctamente\nLos valores numéricos del sensor ya no están redondeados",
+        "pl": "Specjalne znaki w definicjach urządzeń (np. \"< >\") są teraz prawidłowo obsługiwane\nWartości boolean w definicjach urządzeń są teraz prawidłowo obsługiwane\nNumeryczne wartości czujników nie są już zaokrąglone",
+        "uk": "Спеціальні символи у визначенні пристрою (наприклад, \"<>\") тепер правильно обробляються\nБололеві значення у визначенні пристроїв тепер правильно обробляються\nЧисельні значення датчика більше не закруглені",
+        "zh-cn": "设备定义中的特殊字符( 如“ QQ” ) 现在被正确处理\n设备定义中的布尔值现在被正确处理\n数值不再四舍五入"
+      },
       "1.3.2": {
         "en": "Creation of adapter objects was fixed",
         "de": "Erstellung von Adapterobjekten wurde korrigiert",
@@ -80,19 +93,6 @@
         "pl": "Większa odporność podczas komunikacji z bramą\nDodano nową opcję do ignorowania błędów certyfikatu",
         "uk": "Підвищена надійність при спілкуванні з шлюзом\nДодано новий варіант ігнорувати помилки сертифіката",
         "zh-cn": "与网关沟通时的强度提高\n添加新选项以忽略证书错误"
-      },
-      "1.0.0": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版",
-        "uk": "початковий випуск"
       }
     },
     "titleLang": {

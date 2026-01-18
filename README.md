@@ -33,8 +33,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.3.3 (2026-01-18)
 
 - (Black-Thunder) Special characters in device definitions (e.g. "<>") are now correctly handled
 - (Black-Thunder) Boolean values in device definitions are now correctly handled
