@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "news": {
+      "1.3.4": {
+        "en": "Additional irrelevant gateway messages are now ignored\nUnknown gateway messages are now logged as warning instead of error",
+        "de": "Zusätzliche irrelevante Gateway-Nachrichten werden nun ignoriert\nUnbekannte Gateway-Nachrichten werden nun als Warnung statt als Fehler protokolliert",
+        "ru": "Дополнительные нерелевантные сообщения шлюза теперь игнорируются\nНеизвестные сообщения шлюза теперь регистрируются как предупреждение вместо ошибки",
+        "pt": "Mensagens de gateway irrelevantes adicionais são agora ignoradas\nMensagens desconhecidas de gateway são agora registradas como aviso em vez de erro",
+        "nl": "Extra irrelevante gateway-berichten worden nu genegeerd\nOnbekende gateway-berichten zijn nu aangemeld als waarschuwing in plaats van foutmelding",
+        "fr": "D'autres messages de passerelle non pertinents sont maintenant ignorés\nLes messages de passerelle inconnus sont maintenant enregistrés comme avertissement au lieu d'erreur",
+        "it": "Ulteriori messaggi di gateway irrilevanti sono ora ignorati\nI messaggi di gateway sconosciuti sono ora registrati come avvertimento invece di errore",
+        "es": "Otros mensajes de gateway irrelevantes ahora son ignorados\nLos mensajes de gateway desconocidos ahora se registran como advertencia en lugar de error",
+        "pl": "Dodatkowe nieistotne wiadomości bramki są teraz ignorowane\nNieznane wiadomości bramki są teraz rejestrowane jako ostrzeżenie zamiast błędu",
+        "uk": "Додаткові повідомлення безвідмовних воріт тепер ігноруються\nНевідомі повідомлення шлюзу тепер записуються як попередження замість помилки",
+        "zh-cn": "额外的无关网关消息现在被忽略\n未知的网关消息现已作为警告而不是错误登录"
+      },
       "1.3.3": {
         "en": "Special characters in device definitions (e.g. \"<>\") are now correctly handled\nBoolean values in device definitions are now correctly handled\nNumeric sensor values are no longer rounded",
         "de": "Sonderzeichen in Gerätedefinitionen (z.B. \"<>\") werden nun korrekt verarbeitet\nBoolesche Werte in Gerätedefinitionen werden nun korrekt verarbeitet\nNumerische Sensorwerte werden nicht mehr gerundet",
@@ -80,19 +93,6 @@
         "pl": "Przekształcona obsługa urządzenia: stany dynamiczne, usunięty biały typ, zgrupowane urządzenia pod master ID\nUchwyt aktualizacji wartości urządzenia teraz poprawnie",
         "uk": "Рефакторний пристрій обробки: динамічні стани, видалений тип білий список, вбудовані пристрої під магістр ID\nОновлення значення ручного пристрою тепер правильно",
         "zh-cn": "重构设备处理: 动态状态, 删除类型白名单, 主 ID 下分组设备\n现在正确处理设备值更新"
-      },
-      "1.0.1": {
-        "en": "Increased robustness when communicating with the gateway\nAdded new option to ignore certificate errors",
-        "de": "Robustheit der Kommunikation mit dem Gateway erhöht\nNeue Option hinzugefügt, um Zertifikatsfehler zu ignorieren",
-        "ru": "Повышенная надежность при общении с шлюзом\nДобавлена новая возможность игнорировать ошибки сертификата",
-        "pt": "Maior robustez ao se comunicar com o gateway\nAdicionada nova opção para ignorar erros de certificado",
-        "nl": "Verhoogde robuustheid bij het communiceren met de gateway\nNieuwe optie toegevoegd om certificaatfouten te negeren",
-        "fr": "Une robustesse accrue lors de la communication avec la passerelle\nAjout d'une nouvelle option pour ignorer les erreurs de certificat",
-        "it": "Maggiore robustezza quando si comunica con il gateway\nAggiunta nuova opzione per ignorare gli errori del certificato",
-        "es": "Mayor robustez al comunicarse con la puerta de entrada\nNueva opción para ignorar errores de certificado",
-        "pl": "Większa odporność podczas komunikacji z bramą\nDodano nową opcję do ignorowania błędów certyfikatu",
-        "uk": "Підвищена надійність при спілкуванні з шлюзом\nДодано новий варіант ігнорувати помилки сертифіката",
-        "zh-cn": "与网关沟通时的强度提高\n添加新选项以忽略证书错误"
       }
     },
     "titleLang": {

@@ -33,8 +33,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.3.4 (2026-01-21)
 
 - (Black-Thunder) Additional irrelevant gateway messages are now ignored
 - (Black-Thunder) Unknown gateway messages are now logged as warning instead of error
