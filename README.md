@@ -33,6 +33,12 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) Additional irrelevant gateway messages are now ignored
+- (Black-Thunder) Unknown gateway messages are now logged as warning instead of error
+
 ### 1.3.3 (2026-01-18)
 
 - (Black-Thunder) Special characters in device definitions (e.g. "<>") are now correctly handled
