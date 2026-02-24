@@ -223,7 +223,7 @@ class Smartfriends extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			if (SchellenbergBridge != null) {
-				SchellenbergBridge.handleDisconnect();
+				SchellenbergBridge.handleDisconnect(false);
 			}
 
 			this.setAdapterConnectionState(false);
