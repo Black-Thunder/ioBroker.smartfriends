@@ -20,12 +20,36 @@ const defaultCSymbol = "D19033i";
 
 class ConfigValidator {
 	static validate(config) {
+		// Regex definitions matching the frontend
+		const regex = {
+			ip: /^(\d{1,3}\.){3}\d{1,3}$/,
+			cSymbol: /^[a-zA-Z]\d{5}[a-zA-Z]$/,
+			version: /^\d+(\.\d+){1,3}$/,
+		};
+
 		// Add input type validation
 		const validations = {
-			smartFriendsIP: ip => typeof ip === "string" && ip.length > 0,
-			smartFriendsPort: port => typeof port === "number" && port > 0,
-			smartFriendsUsername: user => typeof user === "string" && user.length > 0,
-			smartFriendsPassword: pwd => typeof pwd === "string" && pwd.length > 0,
+			smartFriendsIP: function (ip) {
+				return typeof ip === "string" && regex.ip.test(ip.trim());
+			},
+			smartFriendsPort: function (port) {
+				return typeof port === "number" && port > 0 && port < 65536;
+			},
+			smartFriendsUsername: function (user) {
+				return typeof user === "string" && user.trim().length > 0;
+			},
+			smartFriendsPassword: function (pwd) {
+				return typeof pwd === "string" && pwd.trim().length > 0;
+			},
+			smartFriendsCSymbol: function (cs) {
+				return typeof cs === "string" && regex.cSymbol.test(cs.trim());
+			},
+			smartFriendsShcVersion: function (v) {
+				return typeof v === "string" && regex.version.test(v.trim());
+			},
+			smartFriendsShApiVersion: function (v) {
+				return typeof v === "string" && regex.version.test(v.trim());
+			},
 		};
 
 		const errors = Object.entries(validations)
@@ -36,18 +60,11 @@ class ConfigValidator {
 			throw new Error(errors.join(", "));
 		}
 
-		const defaults = {
-			port: defaultPort,
-			cSymbol: defaultCSymbol,
-			shcVersion: defaultShcVersion,
-			shApiVersion: defaultShcApiVersion,
-		};
-
 		// Set defaults
-		config.smartFriendsPort = config.smartFriendsPort || defaults.port;
-		config.smartFriendsCSymbol = config.smartFriendsCSymbol || defaults.cSymbol;
-		config.smartFriendsShcVersion = config.smartFriendsShcVersion || defaults.shcVersion;
-		config.smartFriendsShApiVersion = config.smartFriendsShApiVersion || defaults.shApiVersion;
+		config.smartFriendsPort = config.smartFriendsPort || defaultPort;
+		config.smartFriendsCSymbol = config.smartFriendsCSymbol || defaultCSymbol;
+		config.smartFriendsShcVersion = config.smartFriendsShcVersion || defaultShcVersion;
+		config.smartFriendsShApiVersion = config.smartFriendsShApiVersion || defaultShcApiVersion;
 	}
 }
 

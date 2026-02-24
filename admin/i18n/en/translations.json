@@ -15,5 +15,11 @@
 	"general_settings": "General settings",
 	"smartfriends adapter settings": "Adapter settings for smartfriends",
 	"Ignore SSL errors": "Ignore SSL errors",
-	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means."
+	"Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.",
+	"The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A",
+	"The entered format is invalid. Example: 3.7.4": "The entered format is invalid. Example: 3.7.4",
+	"WARNING: These values should only be changed by experienced users and only in exceptional cases. Incorrect values can cause the adapter to stop working.": "WARNING: These values should only be changed by experienced users and only in exceptional cases. Incorrect values can cause the adapter to stop working.",
+	"The entered format is invalid. Example: 192.168.1.1": "The entered format is invalid. Example: 192.168.1.1",
+	"Enter the port number specific for your gateway": "Enter the port number specific for your gateway",
+	"The entered port number is invalid. It should be an integer between 1 and 65535. Example: 12345": "The entered port number is invalid. It should be an integer between 1 and 65535. Example: 12345"
 }
