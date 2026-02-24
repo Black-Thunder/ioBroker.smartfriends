@@ -33,8 +33,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.3.6-alpha.0 (2026-02-24)
 
 - (Black-Thunder) Connection and reconnection logic to the gateway was refactored
 
