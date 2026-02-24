@@ -37,6 +37,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 ### **WORK IN PROGRESS**
 
 - (Black-Thunder) Additional logging when connection parameters are incorrect was added
+- (Black-Thunder) Validation of the adapter configuration in the GUI was added
 
 ### 1.3.4 (2026-01-21)
 
