@@ -1,180 +1,170 @@
 {
-  "common": {
-    "name": "smartfriends",
-    "version": "1.3.6-alpha.0",
-    "news": {
-      "1.3.6-alpha.0": {
-        "en": "Connection and reconnection logic to the gateway was refactored",
-        "de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde überarbeitet",
-        "ru": "Логика подключения и переподключения к шлюзу была рефакторирована",
-        "pt": "A lógica de conexão e reconexão ao gateway foi refactorada",
-        "nl": "Verbinding en herverbinding logica met de gateway werd gerefactored",
-        "fr": "La logique de connexion et de reconnection à la passerelle a été remaniée",
-        "it": "La logica di connessione e di riconnessione al gateway è stata rifatto",
-        "es": "La lógica de conexión y reconexión a la puerta de entrada fue refactorizada",
-        "pl": "Połączenie i ponowne podłączenie logiki do bramy zostało zrefakturowane",
-        "uk": "З'єднання і відключення логіки до шлюзу було рефакторовано",
-        "zh-cn": "连接和重新连接到网关的逻辑被重构"
-      },
-      "1.3.5": {
-        "en": "Additional logging when connection parameters are incorrect was added\nValidation of the adapter configuration in the GUI was added",
-        "de": "Zusätzliche Protokollierung eingefügt, wenn Verbindungsparameter inkorrekt sind\nValidierung der Adapterkonfiguration in der GUI wurde hinzugefügt",
-        "ru": "Дополнительная регистрация при добавлении неправильных параметров соединения\nДобавлена валидация конфигурации адаптера в GUI",
-        "pt": "Foi adicionado um registro adicional quando os parâmetros de conexão estão incorretos\nA validação da configuração do adaptador na GUI foi adicionada",
-        "nl": "Extra loggen wanneer verbindingsparameters onjuist zijn toegevoegd\nValidatie van de configuratie van de adapter in de GUI is toegevoegd",
-        "fr": "Un enregistrement supplémentaire lorsque les paramètres de connexion sont incorrects a été ajouté\nLa validation de la configuration de l'adaptateur dans l'interface graphique a été ajoutée",
-        "it": "Registrazione aggiuntiva quando i parametri di connessione sono errati è stato aggiunto\nÈ stata aggiunta la convalida della configurazione dell'adattatore nella GUI",
-        "es": "Se agregó un registro adicional cuando los parámetros de conexión son incorrectos\nSe agregó la validación de la configuración del adaptador en el GUI",
-        "pl": "Dodano dodatkowe logowanie, gdy parametry połączenia są nieprawidłowe\nDodano walidację konfiguracji adaptera w GUI",
-        "uk": "Додаткова логістика при підключенні параметрів невірно додана\nДодано перевірку конфігурації адаптера в GUI",
-        "zh-cn": "连接参数不正确时添加了额外的记录\n在图形界面中添加了适配器配置的验证"
-      },
-      "1.3.4": {
-        "en": "Additional irrelevant gateway messages are now ignored\nUnknown gateway messages are now logged as warning instead of error",
-        "de": "Zusätzliche irrelevante Gateway-Nachrichten werden nun ignoriert\nUnbekannte Gateway-Nachrichten werden nun als Warnung statt als Fehler protokolliert",
-        "ru": "Дополнительные нерелевантные сообщения шлюза теперь игнорируются\nНеизвестные сообщения шлюза теперь регистрируются как предупреждение вместо ошибки",
-        "pt": "Mensagens de gateway irrelevantes adicionais são agora ignoradas\nMensagens desconhecidas de gateway são agora registradas como aviso em vez de erro",
-        "nl": "Extra irrelevante gateway-berichten worden nu genegeerd\nOnbekende gateway-berichten zijn nu aangemeld als waarschuwing in plaats van foutmelding",
-        "fr": "D'autres messages de passerelle non pertinents sont maintenant ignorés\nLes messages de passerelle inconnus sont maintenant enregistrés comme avertissement au lieu d'erreur",
-        "it": "Ulteriori messaggi di gateway irrilevanti sono ora ignorati\nI messaggi di gateway sconosciuti sono ora registrati come avvertimento invece di errore",
-        "es": "Otros mensajes de gateway irrelevantes ahora son ignorados\nLos mensajes de gateway desconocidos ahora se registran como advertencia en lugar de error",
-        "pl": "Dodatkowe nieistotne wiadomości bramki są teraz ignorowane\nNieznane wiadomości bramki są teraz rejestrowane jako ostrzeżenie zamiast błędu",
-        "uk": "Додаткові повідомлення безвідмовних воріт тепер ігноруються\nНевідомі повідомлення шлюзу тепер записуються як попередження замість помилки",
-        "zh-cn": "额外的无关网关消息现在被忽略\n未知的网关消息现已作为警告而不是错误登录"
-      },
-      "1.3.3": {
-        "en": "Special characters in device definitions (e.g. \"<>\") are now correctly handled\nBoolean values in device definitions are now correctly handled\nNumeric sensor values are no longer rounded",
-        "de": "Sonderzeichen in Gerätedefinitionen (z.B. \"<>\") werden nun korrekt verarbeitet\nBoolesche Werte in Gerätedefinitionen werden nun korrekt verarbeitet\nNumerische Sensorwerte werden nicht mehr gerundet",
-        "ru": "Специальные символы в определениях устройств (например, \"<>\") теперь правильно обработаны\nБулевы значения в определениях устройств теперь правильно обрабатываются\nЧисленные значения датчиков больше не округляются",
-        "pt": "Os caracteres especiais nas definições do dispositivo (por exemplo, \"<>\") são agora correctamente manuseados\nOs valores booleanos nas definições do dispositivo são agora correctamente manuseados\nOs valores dos sensores numéricos já não são arredondados",
-        "nl": "Speciale tekens in apparaatdefinities (bijv. \"<>\") worden nu correct behandeld\nBooleaanse waarden in apparaatdefinities worden nu correct behandeld\nNumerieke sensorwaarden zijn niet meer afgerond",
-        "fr": "Les caractères spéciaux dans les définitions de l'appareil (p. ex. «<>») sont maintenant correctement traités\nLes valeurs booléennes dans les définitions des appareils sont maintenant correctement gérées\nLes valeurs des capteurs numériques ne sont plus arrondies",
-        "it": "I caratteri speciali nelle definizioni dei dispositivi (ad esempio \" <>\") sono ora gestiti correttamente\nI valori booleani nelle definizioni dei dispositivi sono ora gestiti correttamente\nI valori del sensore numerico non sono più arrotondati",
-        "es": "Los caracteres especiales en las definiciones de dispositivos (por ejemplo, \"directo\") se manejan correctamente\nLos valores booleanos en las definiciones de dispositivos ahora se manejan correctamente\nLos valores numéricos del sensor ya no están redondeados",
-        "pl": "Specjalne znaki w definicjach urządzeń (np. \"< >\") są teraz prawidłowo obsługiwane\nWartości boolean w definicjach urządzeń są teraz prawidłowo obsługiwane\nNumeryczne wartości czujników nie są już zaokrąglone",
-        "uk": "Спеціальні символи у визначенні пристрою (наприклад, \"<>\") тепер правильно обробляються\nБололеві значення у визначенні пристроїв тепер правильно обробляються\nЧисельні значення датчика більше не закруглені",
-        "zh-cn": "设备定义中的特殊字符( 如“ QQ” ) 现在被正确处理\n设备定义中的布尔值现在被正确处理\n数值不再四舍五入"
-      },
-      "1.3.2": {
-        "en": "Creation of adapter objects was fixed",
-        "de": "Erstellung von Adapterobjekten wurde korrigiert",
-        "ru": "Зафиксировано создание объектов адаптера",
-        "pt": "A criação de objetos adaptadores foi fixada",
-        "nl": "Aanmaken van adapterobjecten werd vastgesteld",
-        "fr": "La création d'objets d'adaptateur a été fixée",
-        "it": "Creazione di oggetti adattatori è stata fissata",
-        "es": "Creación de objetos adaptadores se fijó",
-        "pl": "Tworzenie obiektów adaptera zostało naprawione",
-        "uk": "Створення об'єктів адаптера",
-        "zh-cn": "设定适配对象已固定"
-      },
-      "1.3.1": {
-        "en": "Dependencies were updated",
-        "de": "Abhängigkeiten wurden aktualisiert",
-        "ru": "Зависимости обновлялись",
-        "pt": "As dependências foram atualizadas",
-        "nl": "Afhankelijkheden werden bijgewerkt",
-        "fr": "Mise à jour des dépendances",
-        "it": "Le dipendenze sono state aggiornate",
-        "es": "Se actualizaron las dependencias",
-        "pl": "Zaktualizowano uzależnienia",
-        "uk": "Залежність оновлено",
-        "zh-cn": "附属关系得到更新"
-      },
-      "1.3.0": {
-        "en": "Support for further device types was added\nUmlauts in device names are now correctly parsed",
-        "de": "Unterstützung für weitere Gerätetypen wurde hinzugefügt\nUmlaute in Gerätenamen werden nun korrekt dargestellt",
-        "ru": "Добавлена поддержка дополнительных типов устройств\nУмлауты в названиях устройств теперь правильно разобраны",
-        "pt": "Foi adicionado suporte para outros tipos de dispositivos\nUmlauts em nomes de dispositivos agora são corretamente analisados",
-        "nl": "Ondersteuning voor andere apparaattypes is toegevoegd\nUmlauts in apparaatnamen zijn nu correct ontleed",
-        "fr": "Un soutien pour d'autres types d'appareils a été ajouté\nUmlauts dans les noms de périphériques sont maintenant correctement analysés",
-        "it": "È stato aggiunto il supporto per ulteriori tipi di dispositivo\nI nomi dei dispositivi sono ora correttamente analizzati",
-        "es": "Se agregó soporte para nuevos tipos de dispositivos\nUmlauts en los nombres de los dispositivos ahora se analizan correctamente",
-        "pl": "Dodano wsparcie dla innych typów urządzeń\nKlauty w nazwach urządzeń są teraz poprawnie przefiltrowane",
-        "uk": "Додана підтримка подальших типів пристроїв\nУмлаути в назвах пристроїв тепер правильно припаровані",
-        "zh-cn": "添加了对更多设备类型的支持\n设备名称中的 Umlaut 现已正确解析"
-      }
-    },
-    "titleLang": {
-      "en": "SmartFriends",
-      "de": "SmartFriends",
-      "ru": "SmartFriends",
-      "pt": "SmartFriends",
-      "nl": "SmartFriends",
-      "fr": "SmartFriends",
-      "it": "SmartFriends",
-      "es": "SmartFriends",
-      "pl": "SmartFriends",
-      "zh-cn": "SmartFriends",
-      "uk": "SmartFriends"
-    },
-    "desc": {
-      "en": "Local control of SmartFriends gateways and connected devices without cloud access.",
-      "de": "Lokale Steuerung von SmartFriends-Gateways und angeschlossenen Geräten ohne Cloud-Anbindung.",
-      "ru": "Локальное управление шлюзами SmartFriends и подключёнными устройствами без облака.",
-      "pt": "Controle local de gateways SmartFriends e dispositivos conectados sem uso de nuvem.",
-      "nl": "Lokale aansturing van SmartFriends-gateways en aangesloten apparaten zonder cloud.",
-      "fr": "Contrôle local des passerelles SmartFriends et des appareils connectés sans cloud.",
-      "it": "Controllo locale dei gateway SmartFriends e dei dispositivi collegati senza cloud.",
-      "es": "Control local de gateways SmartFriends y dispositivos conectados sin nube.",
-      "pl": "Lokalne sterowanie bramkami SmartFriends i podłączonymi urządzeniami bez chmury.",
-      "zh-cn": "无需云服务即可本地控制 SmartFriends 网关及其连接的设备。",
-      "uk": "Локальне керування шлюзами SmartFriends і підключеними пристроями без хмари."
-    },
-    "authors": [
-      "Black-Thunder <glwars@aol.de>"
-    ],
-    "keywords": [
-      "home automation",
-      "smartfriends",
-      "schellenberg"
-    ],
-    "licenseInformation": {
-      "license": "MIT",
-      "type": "free"
-    },
-    "platform": "Javascript/Node.js",
-    "icon": "smartfriends.png",
-    "enabled": false,
-    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
-    "readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "iot-systems",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=6.0.11"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.20"
-      }
-    ],
-    "tier": 2
-  },
-  "encryptedNative": [
-    "smartFriendsPassword"
-  ],
-  "protectedNative": [
-    "smartFriendsPassword"
-  ],
-  "native": {
-    "smartFriendsPort": 4300,
-    "smartFriendsIP": "",
-    "smartFriendsUsername": "",
-    "smartFriendsPassword": "",
-    "smartFriendsCSymbol": "D19033i",
-    "smartFriendsShcVersion": "3.7.4",
-    "smartFriendsShApiVersion": "3.4",
-    "ignoreSslErrors": false
-  },
-  "objects": [],
-  "instanceObjects": []
+	"common": {
+		"name": "smartfriends",
+		"version": "1.3.6-alpha.0",
+		"news": {
+			"1.3.6-alpha.0": {
+				"en": "Connection and reconnection logic to the gateway was refactored",
+				"de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde überarbeitet",
+				"ru": "Логика подключения и переподключения к шлюзу была рефакторирована",
+				"pt": "A lógica de conexão e reconexão ao gateway foi refactorada",
+				"nl": "Verbinding en herverbinding logica met de gateway werd gerefactored",
+				"fr": "La logique de connexion et de reconnection à la passerelle a été remaniée",
+				"it": "La logica di connessione e di riconnessione al gateway è stata rifatto",
+				"es": "La lógica de conexión y reconexión a la puerta de entrada fue refactorizada",
+				"pl": "Połączenie i ponowne podłączenie logiki do bramy zostało zrefakturowane",
+				"uk": "З'єднання і відключення логіки до шлюзу було рефакторовано",
+				"zh-cn": "连接和重新连接到网关的逻辑被重构"
+			},
+			"1.3.5": {
+				"en": "Additional logging when connection parameters are incorrect was added\nValidation of the adapter configuration in the GUI was added",
+				"de": "Zusätzliche Protokollierung eingefügt, wenn Verbindungsparameter inkorrekt sind\nValidierung der Adapterkonfiguration in der GUI wurde hinzugefügt",
+				"ru": "Дополнительная регистрация при добавлении неправильных параметров соединения\nДобавлена валидация конфигурации адаптера в GUI",
+				"pt": "Foi adicionado um registro adicional quando os parâmetros de conexão estão incorretos\nA validação da configuração do adaptador na GUI foi adicionada",
+				"nl": "Extra loggen wanneer verbindingsparameters onjuist zijn toegevoegd\nValidatie van de configuratie van de adapter in de GUI is toegevoegd",
+				"fr": "Un enregistrement supplémentaire lorsque les paramètres de connexion sont incorrects a été ajouté\nLa validation de la configuration de l'adaptateur dans l'interface graphique a été ajoutée",
+				"it": "Registrazione aggiuntiva quando i parametri di connessione sono errati è stato aggiunto\nÈ stata aggiunta la convalida della configurazione dell'adattatore nella GUI",
+				"es": "Se agregó un registro adicional cuando los parámetros de conexión son incorrectos\nSe agregó la validación de la configuración del adaptador en el GUI",
+				"pl": "Dodano dodatkowe logowanie, gdy parametry połączenia są nieprawidłowe\nDodano walidację konfiguracji adaptera w GUI",
+				"uk": "Додаткова логістика при підключенні параметрів невірно додана\nДодано перевірку конфігурації адаптера в GUI",
+				"zh-cn": "连接参数不正确时添加了额外的记录\n在图形界面中添加了适配器配置的验证"
+			},
+			"1.3.4": {
+				"en": "Additional irrelevant gateway messages are now ignored\nUnknown gateway messages are now logged as warning instead of error",
+				"de": "Zusätzliche irrelevante Gateway-Nachrichten werden nun ignoriert\nUnbekannte Gateway-Nachrichten werden nun als Warnung statt als Fehler protokolliert",
+				"ru": "Дополнительные нерелевантные сообщения шлюза теперь игнорируются\nНеизвестные сообщения шлюза теперь регистрируются как предупреждение вместо ошибки",
+				"pt": "Mensagens de gateway irrelevantes adicionais são agora ignoradas\nMensagens desconhecidas de gateway são agora registradas como aviso em vez de erro",
+				"nl": "Extra irrelevante gateway-berichten worden nu genegeerd\nOnbekende gateway-berichten zijn nu aangemeld als waarschuwing in plaats van foutmelding",
+				"fr": "D'autres messages de passerelle non pertinents sont maintenant ignorés\nLes messages de passerelle inconnus sont maintenant enregistrés comme avertissement au lieu d'erreur",
+				"it": "Ulteriori messaggi di gateway irrilevanti sono ora ignorati\nI messaggi di gateway sconosciuti sono ora registrati come avvertimento invece di errore",
+				"es": "Otros mensajes de gateway irrelevantes ahora son ignorados\nLos mensajes de gateway desconocidos ahora se registran como advertencia en lugar de error",
+				"pl": "Dodatkowe nieistotne wiadomości bramki są teraz ignorowane\nNieznane wiadomości bramki są teraz rejestrowane jako ostrzeżenie zamiast błędu",
+				"uk": "Додаткові повідомлення безвідмовних воріт тепер ігноруються\nНевідомі повідомлення шлюзу тепер записуються як попередження замість помилки",
+				"zh-cn": "额外的无关网关消息现在被忽略\n未知的网关消息现已作为警告而不是错误登录"
+			},
+			"1.3.3": {
+				"en": "Special characters in device definitions (e.g. \"<>\") are now correctly handled\nBoolean values in device definitions are now correctly handled\nNumeric sensor values are no longer rounded",
+				"de": "Sonderzeichen in Gerätedefinitionen (z.B. \"<>\") werden nun korrekt verarbeitet\nBoolesche Werte in Gerätedefinitionen werden nun korrekt verarbeitet\nNumerische Sensorwerte werden nicht mehr gerundet",
+				"ru": "Специальные символы в определениях устройств (например, \"<>\") теперь правильно обработаны\nБулевы значения в определениях устройств теперь правильно обрабатываются\nЧисленные значения датчиков больше не округляются",
+				"pt": "Os caracteres especiais nas definições do dispositivo (por exemplo, \"<>\") são agora correctamente manuseados\nOs valores booleanos nas definições do dispositivo são agora correctamente manuseados\nOs valores dos sensores numéricos já não são arredondados",
+				"nl": "Speciale tekens in apparaatdefinities (bijv. \"<>\") worden nu correct behandeld\nBooleaanse waarden in apparaatdefinities worden nu correct behandeld\nNumerieke sensorwaarden zijn niet meer afgerond",
+				"fr": "Les caractères spéciaux dans les définitions de l'appareil (p. ex. «<>») sont maintenant correctement traités\nLes valeurs booléennes dans les définitions des appareils sont maintenant correctement gérées\nLes valeurs des capteurs numériques ne sont plus arrondies",
+				"it": "I caratteri speciali nelle definizioni dei dispositivi (ad esempio \" <>\") sono ora gestiti correttamente\nI valori booleani nelle definizioni dei dispositivi sono ora gestiti correttamente\nI valori del sensore numerico non sono più arrotondati",
+				"es": "Los caracteres especiales en las definiciones de dispositivos (por ejemplo, \"directo\") se manejan correctamente\nLos valores booleanos en las definiciones de dispositivos ahora se manejan correctamente\nLos valores numéricos del sensor ya no están redondeados",
+				"pl": "Specjalne znaki w definicjach urządzeń (np. \"< >\") są teraz prawidłowo obsługiwane\nWartości boolean w definicjach urządzeń są teraz prawidłowo obsługiwane\nNumeryczne wartości czujników nie są już zaokrąglone",
+				"uk": "Спеціальні символи у визначенні пристрою (наприклад, \"<>\") тепер правильно обробляються\nБололеві значення у визначенні пристроїв тепер правильно обробляються\nЧисельні значення датчика більше не закруглені",
+				"zh-cn": "设备定义中的特殊字符( 如“ QQ” ) 现在被正确处理\n设备定义中的布尔值现在被正确处理\n数值不再四舍五入"
+			},
+			"1.3.2": {
+				"en": "Creation of adapter objects was fixed",
+				"de": "Erstellung von Adapterobjekten wurde korrigiert",
+				"ru": "Зафиксировано создание объектов адаптера",
+				"pt": "A criação de objetos adaptadores foi fixada",
+				"nl": "Aanmaken van adapterobjecten werd vastgesteld",
+				"fr": "La création d'objets d'adaptateur a été fixée",
+				"it": "Creazione di oggetti adattatori è stata fissata",
+				"es": "Creación de objetos adaptadores se fijó",
+				"pl": "Tworzenie obiektów adaptera zostało naprawione",
+				"uk": "Створення об'єктів адаптера",
+				"zh-cn": "设定适配对象已固定"
+			},
+			"1.3.1": {
+				"en": "Dependencies were updated",
+				"de": "Abhängigkeiten wurden aktualisiert",
+				"ru": "Зависимости обновлялись",
+				"pt": "As dependências foram atualizadas",
+				"nl": "Afhankelijkheden werden bijgewerkt",
+				"fr": "Mise à jour des dépendances",
+				"it": "Le dipendenze sono state aggiornate",
+				"es": "Se actualizaron las dependencias",
+				"pl": "Zaktualizowano uzależnienia",
+				"uk": "Залежність оновлено",
+				"zh-cn": "附属关系得到更新"
+			},
+			"1.3.0": {
+				"en": "Support for further device types was added\nUmlauts in device names are now correctly parsed",
+				"de": "Unterstützung für weitere Gerätetypen wurde hinzugefügt\nUmlaute in Gerätenamen werden nun korrekt dargestellt",
+				"ru": "Добавлена поддержка дополнительных типов устройств\nУмлауты в названиях устройств теперь правильно разобраны",
+				"pt": "Foi adicionado suporte para outros tipos de dispositivos\nUmlauts em nomes de dispositivos agora são corretamente analisados",
+				"nl": "Ondersteuning voor andere apparaattypes is toegevoegd\nUmlauts in apparaatnamen zijn nu correct ontleed",
+				"fr": "Un soutien pour d'autres types d'appareils a été ajouté\nUmlauts dans les noms de périphériques sont maintenant correctement analysés",
+				"it": "È stato aggiunto il supporto per ulteriori tipi di dispositivo\nI nomi dei dispositivi sono ora correttamente analizzati",
+				"es": "Se agregó soporte para nuevos tipos de dispositivos\nUmlauts en los nombres de los dispositivos ahora se analizan correctamente",
+				"pl": "Dodano wsparcie dla innych typów urządzeń\nKlauty w nazwach urządzeń są teraz poprawnie przefiltrowane",
+				"uk": "Додана підтримка подальших типів пристроїв\nУмлаути в назвах пристроїв тепер правильно припаровані",
+				"zh-cn": "添加了对更多设备类型的支持\n设备名称中的 Umlaut 现已正确解析"
+			}
+		},
+		"titleLang": {
+			"en": "SmartFriends",
+			"de": "SmartFriends",
+			"ru": "SmartFriends",
+			"pt": "SmartFriends",
+			"nl": "SmartFriends",
+			"fr": "SmartFriends",
+			"it": "SmartFriends",
+			"es": "SmartFriends",
+			"pl": "SmartFriends",
+			"zh-cn": "SmartFriends",
+			"uk": "SmartFriends"
+		},
+		"desc": {
+			"en": "Local control of SmartFriends gateways and connected devices without cloud access.",
+			"de": "Lokale Steuerung von SmartFriends-Gateways und angeschlossenen Geräten ohne Cloud-Anbindung.",
+			"ru": "Локальное управление шлюзами SmartFriends и подключёнными устройствами без облака.",
+			"pt": "Controle local de gateways SmartFriends e dispositivos conectados sem uso de nuvem.",
+			"nl": "Lokale aansturing van SmartFriends-gateways en aangesloten apparaten zonder cloud.",
+			"fr": "Contrôle local des passerelles SmartFriends et des appareils connectés sans cloud.",
+			"it": "Controllo locale dei gateway SmartFriends e dei dispositivi collegati senza cloud.",
+			"es": "Control local de gateways SmartFriends y dispositivos conectados sin nube.",
+			"pl": "Lokalne sterowanie bramkami SmartFriends i podłączonymi urządzeniami bez chmury.",
+			"zh-cn": "无需云服务即可本地控制 SmartFriends 网关及其连接的设备。",
+			"uk": "Локальне керування шлюзами SmartFriends і підключеними пристроями без хмари."
+		},
+		"authors": ["Black-Thunder <glwars@aol.de>"],
+		"keywords": ["home automation", "smartfriends", "schellenberg"],
+		"licenseInformation": {
+			"license": "MIT",
+			"type": "free"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "smartfriends.png",
+		"enabled": false,
+		"extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.smartfriends/master/admin/smartfriends.png",
+		"readme": "https://github.com/Black-Thunder/ioBroker.smartfriends/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "iot-systems",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.6.20"
+			}
+		],
+		"tier": 2
+	},
+	"encryptedNative": ["smartFriendsPassword"],
+	"protectedNative": ["smartFriendsPassword"],
+	"native": {
+		"smartFriendsPort": 4300,
+		"smartFriendsIP": "",
+		"smartFriendsUsername": "",
+		"smartFriendsPassword": "",
+		"smartFriendsCSymbol": "D19033i",
+		"smartFriendsShcVersion": "3.7.4",
+		"smartFriendsShApiVersion": "3.4",
+		"ignoreSslErrors": false
+	},
+	"objects": [],
+	"instanceObjects": []
 }
