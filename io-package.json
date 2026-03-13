@@ -1,11 +1,11 @@
 {
   "common": {
     "name": "smartfriends",
-    "version": "1.3.6-alpha.2",
+    "version": "1.3.6",
     "news": {
-      "1.3.6-alpha.2": {
+      "1.3.6": {
         "en": "Connection and reconnection logic to the gateway was refactored\nAdditional irrelevant gateway messages are now ignored\nAdapter requires admin version >=7.6.20 now",
-        "de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde refaktoriert\nZusätzliche irrelevante Gateway-Nachrichten werden nun ignoriert\nAdapter erfordert Admin-Version >=7.6.20 jetzt",
+        "de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde überarbeitet\nZusätzliche irrelevante Gateway-Nachrichten werden nun ignoriert\nAdapter erfordert nun Admin-Version >=7.6.20",
         "ru": "Логика подключения и переподключения к шлюзу была рефакторирована\nДополнительные нерелевантные сообщения шлюза теперь игнорируются\nАдаптер требует админ версии >=7.6.20",
         "pt": "A lógica de conexão e reconexão ao gateway foi refactorada\nMensagens de gateway irrelevantes adicionais são agora ignoradas\nAdaptador requer versão de administrador >= 7.6.20 agora",
         "nl": "Verbinding en herverbinding logica met de gateway werd gerefactored\nExtra irrelevante gateway-berichten worden nu genegeerd\nAdapter vereist admin-versie < 7.6.20 nu",
@@ -15,32 +15,6 @@
         "pl": "Połączenie i ponowne podłączenie logiki do bramy zostało zrefakturowane\nDodatkowe nieistotne wiadomości bramki są teraz ignorowane\nAdapter wymaga wersji admin > = 7.6.20",
         "uk": "З'єднання і відключення логіки до шлюзу було рефакторовано\nДодаткові повідомлення безвідмовних воріт тепер ігноруються\nАдаптер вимагає адмін версії >=7.6.20 тепер",
         "zh-cn": "连接和重新连接到网关的逻辑被重构\n额外的无关网关消息现在被忽略\n适配器需要管理员版本 \\\\ 7.6.20 现在"
-      },
-      "1.3.6-alpha.1": {
-        "en": "Connection and reconnection logic to the gateway was refactored\nAdapter requires admin version >=7.6.20 now",
-        "de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde überarbeitet\nAdapter erfordert nun Admin-Version >=7.6.20",
-        "ru": "Логика подключения и переподключения к шлюзу была рефакторирована\nАдаптер требует админ версии >=7.6.20",
-        "pt": "A lógica de conexão e reconexão ao gateway foi refactorada\nAdaptador requer versão de administrador >= 7.6.20 agora",
-        "nl": "Verbinding en herverbinding logica met de gateway werd gerefactored\nAdapter vereist admin-versie < 7.6.20 nu",
-        "fr": "La logique de connexion et de reconnection à la passerelle a été remaniée\nAdaptateur nécessite une version admin >=7.6.20 maintenant",
-        "it": "La logica di connessione e di riconnessione al gateway è stata rifatto\nL'adattatore richiede la versione di amministratore >=7.6.20 ora",
-        "es": "La lógica de conexión y reconexión a la puerta de entrada fue refactorizada\nAdaptador requiere la versión de administración",
-        "pl": "Połączenie i ponowne podłączenie logiki do bramy zostało zrefakturowane\nAdapter wymaga wersji admin > = 7.6.20",
-        "uk": "З'єднання і відключення логіки до шлюзу було рефакторовано\nАдаптер вимагає адмін версії >=7.6.20 тепер",
-        "zh-cn": "连接和重新连接到网关的逻辑被重构\n适配器需要管理员版本 \\\\ 7.6.20 现在"
-      },
-      "1.3.6-alpha.0": {
-        "en": "Connection and reconnection logic to the gateway was refactored",
-        "de": "Verbindungs- und Wiederverbindungslogik zum Gateway wurde überarbeitet",
-        "ru": "Логика подключения и переподключения к шлюзу была рефакторирована",
-        "pt": "A lógica de conexão e reconexão ao gateway foi refactorada",
-        "nl": "Verbinding en herverbinding logica met de gateway werd gerefactored",
-        "fr": "La logique de connexion et de reconnection à la passerelle a été remaniée",
-        "it": "La logica di connessione e di riconnessione al gateway è stata rifatto",
-        "es": "La lógica de conexión y reconexión a la puerta de entrada fue refactorizada",
-        "pl": "Połączenie i ponowne podłączenie logiki do bramy zostało zrefakturowane",
-        "uk": "З'єднання і відключення логіки до шлюзу було рефакторовано",
-        "zh-cn": "连接和重新连接到网关的逻辑被重构"
       },
       "1.3.5": {
         "en": "Additional logging when connection parameters are incorrect was added\nValidation of the adapter configuration in the GUI was added",
@@ -80,19 +54,6 @@
         "pl": "Specjalne znaki w definicjach urządzeń (np. \"< >\") są teraz prawidłowo obsługiwane\nWartości boolean w definicjach urządzeń są teraz prawidłowo obsługiwane\nNumeryczne wartości czujników nie są już zaokrąglone",
         "uk": "Спеціальні символи у визначенні пристрою (наприклад, \"<>\") тепер правильно обробляються\nБололеві значення у визначенні пристроїв тепер правильно обробляються\nЧисельні значення датчика більше не закруглені",
         "zh-cn": "设备定义中的特殊字符( 如“ QQ” ) 现在被正确处理\n设备定义中的布尔值现在被正确处理\n数值不再四舍五入"
-      },
-      "1.3.2": {
-        "en": "Creation of adapter objects was fixed",
-        "de": "Erstellung von Adapterobjekten wurde korrigiert",
-        "ru": "Зафиксировано создание объектов адаптера",
-        "pt": "A criação de objetos adaptadores foi fixada",
-        "nl": "Aanmaken van adapterobjecten werd vastgesteld",
-        "fr": "La création d'objets d'adaptateur a été fixée",
-        "it": "Creazione di oggetti adattatori è stata fissata",
-        "es": "Creación de objetos adaptadores se fijó",
-        "pl": "Tworzenie obiektów adaptera zostało naprawione",
-        "uk": "Створення об'єктів адаптера",
-        "zh-cn": "设定适配对象已固定"
       }
     },
     "titleLang": {
