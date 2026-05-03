@@ -92,6 +92,8 @@ The adapter establishes a direct connection to the gateway to control and query 
 
 - (Black-Thunder) initial release
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## Acknowledgements
 
 Special thanks und credits to [LoPablo](https://github.com/LoPablo/SchellenbergApi) for reverse engineering the API!
