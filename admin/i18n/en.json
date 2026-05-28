@@ -21,5 +21,9 @@
     "advanced_settings": "Advanced settings",
     "advanced_settings_info": "Typically these settings don't need to be modified unless you are using a non-supported gateway. Please refer to the adapter documentation for more information.",
     "general_settings": "General settings",
-    "smartfriends adapter settings": "Adapter settings for smartfriends"
+    "smartfriends adapter settings": "Adapter settings for smartfriends",
+	"CSymbol": "CSymbol",
+	"Port": "Port",
+	"SHAPIVersion": "SHAPIVersion",
+	"SHCVersion": "SHCVersion"
 }

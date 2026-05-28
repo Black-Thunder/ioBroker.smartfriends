@@ -1,5 +1,6 @@
 {
     "Advanced options": "Opzioni avanzate",
+    "CSymbol": "CSymbol",
     "Connection details": "Dettagli di connessione",
     "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Definisce se ignorare gli errori SSL durante la comunicazione con il gateway. Abilitalo solo se sai cosa significa.",
     "Enter the CSymbol specific for your gateway": "Immettere il simbolo CS specifico per il gateway",
@@ -12,6 +13,9 @@
     "IP address": "indirizzo IP",
     "Ignore SSL errors": "Ignora gli errori SSL",
     "Password": "Parola d'ordine",
+    "Port": "Porta",
+    "SHAPIVersion": "Versione SHAPI",
+    "SHCVersion": "Versione SHC",
     "The entered format is invalid. Example: 192.168.1.1": "Il formato inserito non è valido. Esempio: 192.168.1.1",
     "The entered format is invalid. Example: 3.7.4": "Il formato inserito non è valido. Esempio: 3.7.4",
     "The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "Il formato inserito non è valido. Dovrebbe iniziare con una lettera, seguita da 5 cifre e terminare con una lettera. Esempio: D12345A",

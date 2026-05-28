@@ -1,5 +1,6 @@
 {
     "Advanced options": "高级选项",
+    "CSymbol": "符号",
     "Connection details": "连接细节",
     "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "定义与网关通信时是否忽略 SSL 错误。仅当您知道其含义时才启用。",
     "Enter the CSymbol specific for your gateway": "输入特定于您的网关的CSymbol",
@@ -12,6 +13,9 @@
     "IP address": "IP地址",
     "Ignore SSL errors": "忽略 SSL 错误",
     "Password": "密码",
+    "Port": "港口",
+    "SHAPIVersion": "SHAPI版本",
+    "SHCVersion": "SCV版本",
     "The entered format is invalid. Example: 192.168.1.1": "输入的格式无效。示例：192.168.1.1",
     "The entered format is invalid. Example: 3.7.4": "输入的格式无效。示例：3.7.4",
     "The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "输入的格式无效。它应以字母开头，后跟 5 位数字，并以字母结尾。示例：D12345A",

@@ -1,5 +1,6 @@
 {
     "Advanced options": "Розширені опції",
+    "CSymbol": "CSymbol",
     "Connection details": "Деталі підключення",
     "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Визначає, чи ігнорувати помилки SSL під час зв’язку зі шлюзом. Увімкніть, лише якщо ви знаєте, що це означає.",
     "Enter the CSymbol specific for your gateway": "Введіть символ CSymbol для вашого шлюзу",
@@ -12,6 +13,9 @@
     "IP address": "IP-адреса",
     "Ignore SSL errors": "Ігноруйте помилки SSL",
     "Password": "Пароль",
+    "Port": "Порт",
+    "SHAPIVersion": "Версія SHAPI",
+    "SHCVersion": "Версія SHC",
     "The entered format is invalid. Example: 192.168.1.1": "Введений формат недійсний. Приклад: 192.168.1.1",
     "The entered format is invalid. Example: 3.7.4": "Введений формат недійсний. Приклад: 3.7.4",
     "The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "Введений формат недійсний. Воно повинно починатися з літери, потім 5 цифр і закінчуватися літерою. Приклад: D12345A",

@@ -1,5 +1,6 @@
 {
     "Advanced options": "Geavanceerde mogelijkheden",
+    "CSymbol": "CSymbool",
     "Connection details": "Verbindingsgegevens",
     "Defines whether to ignore SSL errors when communicating with the gateway. Only enable if you know what it means.": "Bepaalt of SSL-fouten moeten worden genegeerd bij communicatie met de gateway. Schakel dit alleen in als u weet wat het betekent.",
     "Enter the CSymbol specific for your gateway": "Voer het CSymbol in dat specifiek is voor uw gateway",
@@ -12,6 +13,9 @@
     "IP address": "IP adres",
     "Ignore SSL errors": "Negeer SSL-fouten",
     "Password": "Wachtwoord",
+    "Port": "Haven",
+    "SHAPIVersion": "SHAPIVversie",
+    "SHCVersion": "SHC-versie",
     "The entered format is invalid. Example: 192.168.1.1": "Het ingevoerde formaat is ongeldig. Voorbeeld: 192.168.1.1",
     "The entered format is invalid. Example: 3.7.4": "Het ingevoerde formaat is ongeldig. Voorbeeld: 3.7.4",
     "The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "Het ingevoerde formaat is ongeldig. Het moet beginnen met een letter, gevolgd door 5 cijfers en eindigen met een letter. Voorbeeld: D12345A",
