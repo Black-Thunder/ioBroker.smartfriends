@@ -35,7 +35,10 @@ The adapter establishes a direct connection to the gateway to control and query 
 -->
 
 ### **WORK IN PROGRESS**
+
 - (copilot) Adapter requires node.js >= 22 now
+- (Black-Thunder) Additional irrelevant gateway messages are now ignored
+- (Black-Thunder) Dependencies were updated
 
 ### 1.3.6 (2026-03-13)
 
