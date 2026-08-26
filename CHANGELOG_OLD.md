@@ -1,4 +1,5 @@
 # Older changes
+
 ## 1.3.2 (2026-01-13)
 
 - (Black-Thunder) Creation of adapter objects was fixed
