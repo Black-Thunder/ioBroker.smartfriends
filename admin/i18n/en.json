@@ -25,5 +25,7 @@
 	"CSymbol": "CSymbol",
 	"Port": "Port",
 	"SHAPIVersion": "SHAPIVersion",
-	"SHCVersion": "SHCVersion"
+	"SHCVersion": "SHCVersion",
+	"SmartFriends credentials": "SmartFriends credentials",
+	"Select or create credentials for your SmartFriendsBox": "Select or create credentials for your SmartFriendsBox"
 }

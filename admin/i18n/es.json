@@ -16,6 +16,8 @@
 	"Port": "Puerto",
 	"SHAPIVersion": "Versión SHAPI",
 	"SHCVersion": "Versión SHC",
+	"Select or create credentials for your SmartFriendsBox": "Selecciona o crea credenciales para tu SmartFriendsBox",
+	"SmartFriends credentials": "Credenciales de SmartFriends",
 	"The entered format is invalid. Example: 192.168.1.1": "El formato ingresado no es válido. Ejemplo: 192.168.1.1",
 	"The entered format is invalid. Example: 3.7.4": "El formato ingresado no es válido. Ejemplo: 3.7.4",
 	"The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "El formato ingresado no es válido. Debe comenzar con una letra, seguida de 5 dígitos y terminar con una letra. Ejemplo: D12345A",

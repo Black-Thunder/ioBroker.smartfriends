@@ -16,6 +16,8 @@
 	"Port": "Порт",
 	"SHAPIVersion": "Версія SHAPI",
 	"SHCVersion": "Версія SHC",
+	"Select or create credentials for your SmartFriendsBox": "Виберіть або створіть облікові дані для свого SmartFriendsBox",
+	"SmartFriends credentials": "Облікові дані SmartFriends",
 	"The entered format is invalid. Example: 192.168.1.1": "Введений формат недійсний. Приклад: 192.168.1.1",
 	"The entered format is invalid. Example: 3.7.4": "Введений формат недійсний. Приклад: 3.7.4",
 	"The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "Введений формат недійсний. Воно повинно починатися з літери, потім 5 цифр і закінчуватися літерою. Приклад: D12345A",

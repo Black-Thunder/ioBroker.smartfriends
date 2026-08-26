@@ -37,11 +37,25 @@
 					"lg": 4,
 					"xl": 4
 				},
+				"smartFriendsCredentialId": {
+					"type": "credential",
+					"credentialType": "custom",
+					"label": "SmartFriends credentials",
+					"tooltip": "Select or create credentials for your SmartFriendsBox",
+					"disableCreation": false,
+					"newLine": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
 				"smartFriendsUsername": {
 					"type": "text",
 					"label": "Username",
 					"newLine": true,
 					"tooltip": "Enter your SmartFriendsBox username",
+					"hidden": "!!data.smartFriendsCredentialId",
 					"xs": 12,
 					"sm": 12,
 					"md": 6,
@@ -53,6 +67,7 @@
 					"label": "Password",
 					"newLine": false,
 					"tooltip": "Enter your SmartFriendsBox password",
+					"hidden": "!!data.smartFriendsCredentialId",
 					"visible": true,
 					"xs": 12,
 					"sm": 12,

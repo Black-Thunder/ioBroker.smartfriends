@@ -16,6 +16,8 @@
 	"Port": "Haven",
 	"SHAPIVersion": "SHAPIVversie",
 	"SHCVersion": "SHC-versie",
+	"Select or create credentials for your SmartFriendsBox": "Selecteer of maak inloggegevens voor uw SmartFriendsBox",
+	"SmartFriends credentials": "SmartFriends-inloggegevens",
 	"The entered format is invalid. Example: 192.168.1.1": "Het ingevoerde formaat is ongeldig. Voorbeeld: 192.168.1.1",
 	"The entered format is invalid. Example: 3.7.4": "Het ingevoerde formaat is ongeldig. Voorbeeld: 3.7.4",
 	"The entered format is invalid. It should start with a letter, followed by 5 digits and end with a letter. Example: D12345A": "Het ingevoerde formaat is ongeldig. Het moet beginnen met een letter, gevolgd door 5 cijfers en eindigen met een letter. Voorbeeld: D12345A",

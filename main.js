@@ -35,12 +35,6 @@ class ConfigValidator {
 			smartFriendsPort: function (port) {
 				return typeof port === "number" && port > 0 && port < 65536;
 			},
-			smartFriendsUsername: function (user) {
-				return typeof user === "string" && user.trim().length > 0;
-			},
-			smartFriendsPassword: function (pwd) {
-				return typeof pwd === "string" && pwd.trim().length > 0;
-			},
 			smartFriendsCSymbol: function (cs) {
 				return typeof cs === "string" && regex.cSymbol.test(cs.trim());
 			},
@@ -78,6 +72,8 @@ class Smartfriends extends utils.Adapter {
 			name: "smartfriends",
 		});
 
+		this.credentialUnsubscribe = null;
+
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		this.on("unload", this.onUnload.bind(this));
@@ -91,6 +87,118 @@ class Smartfriends extends utils.Adapter {
 		}
 
 		ConfigValidator.validate(this.config);
+	}
+
+	/**
+	 * Resolves the SmartFriends login credentials.
+	 *
+	 * Credentials from the central credential store are preferred.
+	 * Legacy adapter configuration is used as fallback.
+	 *
+	 * @returns {Promise<{login: string, password: string, managed: boolean}>}
+	 */
+	async resolveCredentials() {
+		const credentialId = this.config.smartFriendsCredentialId;
+
+		if (typeof credentialId === "string" && credentialId) {
+			if (!utils.Credentials?.getCredentials) {
+				throw new Error(
+					"The credentials manager is not available. Please update js-controller to 7.2.2 or higher.",
+				);
+			}
+
+			const credential = await utils.Credentials.getCredentials(this, credentialId);
+
+			if (utils.Credentials.getCredentialForm(credential.values) !== "login") {
+				throw new Error(`Credential "${credentialId}" must contain login and password.`);
+			}
+
+			const login = credential.values.login;
+			const password = credential.values.password;
+
+			if (typeof login !== "string" || !login.trim() || typeof password !== "string" || !password) {
+				throw new Error(`Credential "${credentialId}" is incomplete.`);
+			}
+
+			return {
+				login,
+				password,
+				managed: true,
+			};
+		}
+
+		const login = this.config.smartFriendsUsername;
+		const password = this.config.smartFriendsPassword;
+
+		if (typeof login !== "string" || !login.trim()) {
+			throw new Error("SmartFriends username empty! Check settings.");
+		}
+
+		if (typeof password !== "string" || !password) {
+			throw new Error("SmartFriends password empty! Check settings.");
+		}
+
+		return {
+			login,
+			password,
+			managed: false,
+		};
+	}
+
+	async subscribeToCredentialChanges() {
+		const credentialId = this.config.smartFriendsCredentialId;
+
+		if (typeof credentialId !== "string" || !credentialId) {
+			return;
+		}
+
+		this.log.debug(`Subscribing to credential changes: ${credentialId}`);
+
+		this.credentialUnsubscribe = await utils.Credentials.subscribeCredentials(
+			this,
+			credentialId,
+			async (id, credential) => {
+				if (!credential) {
+					this.log.warn(`Credential "${id}" was deleted. Connection to the gateway will be stopped.`);
+
+					if (SchellenbergBridge) {
+						SchellenbergBridge.handleDisconnect(true);
+						SchellenbergBridge = null;
+					}
+
+					await this.setAdapterConnectionState(false);
+					return;
+				}
+
+				if (utils.Credentials.getCredentialForm(credential.values) !== "login") {
+					this.log.error(`Credential "${id}" must contain login and password.`);
+					return;
+				}
+
+				const login = credential.values.login;
+				const password = credential.values.password;
+
+				if (typeof login !== "string" || !login.trim() || typeof password !== "string" || !password) {
+					this.log.error(`Credential "${id}" is incomplete.`);
+					return;
+				}
+
+				this.log.info(`Credential "${id}" changed. Reconnecting to gateway...`);
+
+				if (SchellenbergBridge) {
+					SchellenbergBridge.handleDisconnect(true);
+					SchellenbergBridge = null;
+				}
+
+				await this.connectToGateway({
+					login,
+					password,
+					managed: true,
+				});
+			},
+		);
+
+		this.log.debug(`Subscribed to credential changes: ${credentialId}`);
 	}
 
 	async initObjects() {
@@ -179,19 +287,19 @@ class Smartfriends extends utils.Adapter {
 		}
 	}
 
-	async connectToGateway() {
+	async connectToGateway(credentials) {
 		this.log.info("Connecting to gateway and retrieving data...");
 		this.log.debug(
 			`IP: ${this.config.smartFriendsIP} - Port: ${this.config.smartFriendsPort} - CSymbol: ${this.config.smartFriendsCSymbol} - SHCVersion: ${this.config.smartFriendsShcVersion} - SHAPIVersion: ${this.config.smartFriendsShApiVersion}`,
 		);
 
-		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(this);
+		SchellenbergBridge = new schellenbergBridge.SchellenbergBridge(this, credentials);
 
 		if (this.deviceManager != null) {
 			this.deviceManager.setBridge(SchellenbergBridge);
 		}
 
-		SchellenbergBridge.Connect();
+		await SchellenbergBridge.Connect();
 	}
 
 	async setAdapterConnectionState(isConnected) {
@@ -207,30 +315,52 @@ class Smartfriends extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.initObjects()
-			.then(() => this.checkSettings())
-			.then(() => {
-				this.connectToGateway();
-				this.subscribeStates("devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
-			})
-			.catch(err => this.log.error(err));
+		try {
+			await this.initObjects();
+			await this.checkSettings();
+
+			const credentials = await this.resolveCredentials();
+
+			this.log.debug(`Managed credentials: ${credentials.managed}`);
+
+			if (credentials.managed) {
+				this.log.debug(`Credential ID: ${this.config.smartFriendsCredentialId}`);
+			}
+
+			await this.connectToGateway(credentials);
+
+			this.subscribeStates("devices.*.control.*");
+
+			if (credentials.managed) {
+				await this.subscribeToCredentialChanges();
+			}
+		} catch (error) {
+			this.log.error(error instanceof Error ? error.message : String(error));
+		}
 	}
 
 	/**
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
 	 */
-	onUnload(callback) {
+	async onUnload(callback) {
 		try {
-			if (SchellenbergBridge != null) {
-				SchellenbergBridge.handleDisconnect(true);
+			if (this.credentialUnsubscribe) {
+				await this.credentialUnsubscribe();
+				this.credentialUnsubscribe = null;
 			}
 
-			this.setAdapterConnectionState(false);
-			this.log.info("onUnload(): Cleaned everything up...");
+			if (SchellenbergBridge) {
+				SchellenbergBridge.handleDisconnect(true);
+				SchellenbergBridge = null;
+			}
 
-			callback();
-		} catch {
+			await this.setAdapterConnectionState(false);
+
+			this.log.info("onUnload(): Cleaned everything up...");
+		} catch (error) {
+			this.log.error(`Error during cleanup: ${error instanceof Error ? error.message : String(error)}`);
+		} finally {
 			callback();
 		}
 	}

@@ -34,6 +34,12 @@ The adapter establishes a direct connection to the gateway to control and query 
 	### __WORK IN PROGRESS__
 -->
 
+### **WORK IN PROGRESS**
+
+- (Black-Thunder) Adapter requires js-controller >=7.2.2 and admin >=7.9.0 now
+- (Black-Thunder) Support for the central ioBroker credentials store was added, while legacy username/password configuration remains supported for backwards compatibility
+- (Black-Thunder) Automatic reconnection is now stopped when the gateway rejects the configured login parameters
+
 ### 2.0.0 (2026-06-01)
 
 - (copilot) Adapter requires node.js >= 22 now
