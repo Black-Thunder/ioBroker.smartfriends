@@ -33,6 +33,7 @@ The adapter establishes a direct connection to the gateway to control and query 
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
 ### 2.1.0 (2026-08-26)
 
 - (Black-Thunder) Adapter requires js-controller >=7.2.2 and admin >=7.9.0 now

@@ -1,10 +1,10 @@
 # Older changes
+
 ## 1.3.3 (2026-01-18)
 
 - (Black-Thunder) Special characters in device definitions (e.g. "<>") are now correctly handled
 - (Black-Thunder) Boolean values in device definitions are now correctly handled
 - (Black-Thunder) Numeric sensor values are no longer rounded
-
 
 ## 1.3.2 (2026-01-13)
 
