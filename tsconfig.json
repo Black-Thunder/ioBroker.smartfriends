@@ -5,6 +5,10 @@
 	// https://github.com/tsconfig/bases#node-22-tsconfigjson
 	"extends": "@tsconfig/node22/tsconfig.json",
 	"compilerOptions": {
+		"types": [
+			"node",
+			"mocha"
+		],
 		// do not compile anything, this file is just to configure type checking
 		"noEmit": true,
 		// check JS files
@@ -23,6 +27,12 @@
 		// "noUnusedParameters": true,
 		"useUnknownInCatchVariables": false
 	},
-	"include": ["**/*.js", "**/*.d.ts"],
-	"exclude": ["node_modules/**", "widgets/**"]
+	"include": [
+		"**/*.js",
+		"**/*.d.ts"
+	],
+	"exclude": [
+		"node_modules/**",
+		"widgets/**"
+	]
 }
